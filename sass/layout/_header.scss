@@ -2,150 +2,169 @@
             HEADER
 *********************************/
 .main-header {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 #menu {
-    display: none;
+  display: none;
 }
 
 #menu:checked + .nav-bar {
-    display: block;
+  display: block;
 }
 
 #menu:checked ~ .search-bar .menu-toggle__label {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 /*********************************
             NAV BAR
 *********************************/
 .nav-bar {
-    background-color: mediumturquoise;
-}
 
-.nav-bar__nav-list {
+  width: 100%; 
+  background-color: #fefefe;
+
+  .nav-bar__nav-list {
     display: flex;
     list-style-type: none;
-    justify-content: center;
-}
-
-.nav-bar__nav-item {
+    justify-content: space-between;
+    padding-left: 0px; /*boostrap por defecto tiene pl = 2px, se lo quitamos*/
+    margin-bottom: 0px; /*boostrap por defecto tiene mb = 2px, se lo quitamos*/
+  }
+  
+  .nav-bar__nav-item {
     text-align: center;
-    background-color: pink;
-}
-
-.nav-bar__nav-link {
+    align-self: end;
+    width:100%;
+  }
+  
+  .nav-bar__nav-link {
     display: block;
-    background-color: purple;
-    color: #fff;
-    padding: 1em 2em;
+    color: #333;
+    padding: 1em 1em;
     text-decoration: none;
-}
+    width: 100%;
+    position: relative;
+  }
 
+}
 
 /*********************************
             SEARCH BAR
 *********************************/
 .search-bar {
-    background-color: olivedrab;
-    display: flex;
-    justify-content: space-between;
-}
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  order: 1;
+  background-color: #2e2e2e; 
 
-.search-bar__logo-container,
-.search-bar__form-container {
+  .search-bar__logo-container,
+  .search-bar__form-container {
     padding: 1em;
-}
+    color: white;
+  }
 
-.search-bar__logo-container {
-    background-color: yellow;
-}
+  .search-bar__logo-container {
+  }
 
-.search-bar__form-container {
-    background-color: gold;
+  .search-bar__form-container {
     flex-basis: 100%;
     display: flex;
     justify-content: center;
-}
+  }
 
-.search-bar__form-label {
+  .search-bar__form-label {
+    display: none;
     background-color: greenyellow;
-}
+  }
 
-.search-bar__form-search {
-    background-color: deeppink;
-    width: 70%;
-}
+  .search-bar__form-search {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 30%;
+    margin: 2px;
+  }
 
-.search-bar__form-submit {
+  .search-bar__form-submit {
     background-color: darkslategray;
-}
+    font-size: 0.8em;
+    width: 3%;
+    text-align: center;
+    padding-top: 4px;
+    border-radius: 5px;
+  }
 
-.search-bar__carrito-container {
+  .search-bar__carrito-container {
     flex: 0 0 3em;
     background-color: goldenrod;
+  }
+
 }
+
 
 
 /*********************************
             MENU TOGGLE
 *********************************/
 .menu-toggle {
-    display: none;
-    background-color: red;
-    flex: 0 0 3em;
-    position: relative;
-    cursor: pointer;
-}
+  display: none;
+  background-color: red;
+  flex: 0 0 3em;
+  position: relative;
+  cursor: pointer;
 
-.menu-toggle__label {
+  .menu-toggle__label {
     display: block;
     background-color: black;
     width: 100%;
     height: 100%;
-}
-
-.menu-toggle__pan-arriba,
-.menu-toggle__medallon,
-.menu-toggle__pan-abajo {
+  }
+  
+  .menu-toggle__pan-arriba,
+  .menu-toggle__medallon,
+  .menu-toggle__pan-abajo {
     display: block;
     background-color: #333;
-    height: .2em;
+    height: 0.2em;
     position: absolute;
-    left: .5em;
-    right: .5em;
+    left: 0.5em;
+    right: 0.5em;
     margin: 0 auto;
+  }
+  
+  .menu-toggle__pan-arriba {
+    top: 0.8em;
+  }
+  .menu-toggle__medallon {
+    top: 50%;
+    margin-top: -0.15em;
+  }
+  .menu-toggle__pan-abajo {
+    bottom: 0.8em;
+  }
+
 }
 
-.menu-toggle__pan-arriba {
-    top: .8em;
-}
-.menu-toggle__medallon {
-    top: 50%;
-    margin-top: -.15em;
-}
-.menu-toggle__pan-abajo {
-    bottom: .8em;
-}
+
 
 @media (max-width: 768px) {
+  .main-header {
+    flex-direction: column-reverse;
+  }
 
-    .main-header {
-        flex-direction: column-reverse;
-    }
+  .menu-toggle {
+    display: block;
+  }
 
-    .menu-toggle {
-        display: block;
-    }
+  .nav-bar {
+    display: none;
+  }
 
-    .nav-bar {
-        display: none;
-    }
-
-    .nav-bar__nav-list {
-        flex-direction: column;
-    }
-
+  .nav-bar__nav-list {
+    flex-direction: column;
+  }
 }
