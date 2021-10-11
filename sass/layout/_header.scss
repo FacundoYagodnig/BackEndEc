@@ -59,8 +59,6 @@
 *********************************/
 .search-bar {
   display: flex;
-  grid-template-columns: 30% 65% 5%;
-  grid-template-rows: 100%;
   width: 100%;
   height: 100%;
   grid-column: 1 / -1;
@@ -70,7 +68,7 @@
   background-color: #2e2e2e;
 
   .search-bar__container {
-    width: 100%;
+    width: 48%;
     display: flex;
     align-items: center;
     text-align: center;
@@ -107,6 +105,8 @@
     border: 2px solid black;
     border-radius: 10px;
     width: 30%;
+    height: 100%;
+    max-height: 28px;
     margin: 2px;
   }
 
@@ -169,33 +169,31 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .main-header {
+    .menu-toggle {
+      display: block;
+      width: 100%;
+    }
+
+    .nav-bar {
+      display: none;
+
+      .nav-bar__nav-list {
+        flex-direction: column;
+      }
+    }
+
     .search-bar {
       max-height: 73px;
     }
   }
 }
 
-@media (max-width: 1023px) {
-  .menu-toggle {
-    display: block;
-    width: 100%;
-  }
-
-  .nav-bar {
-    display: none;
-  }
-
-  .nav-bar__nav-list {
-    flex-direction: column;
-  }
-}
-
 @media (min-width: 1024px) {
   .main-header {
     height: 100%;
-    grid-template-rows: 1fr 1fr 80%;
+    grid-template-rows: 7% 1fr 80%;
 
     .nav-bar {
       display: block;
@@ -213,6 +211,8 @@
 
       &__form-container {
         display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0.8em;
         border: 0;
       }
