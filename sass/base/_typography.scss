@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap");
 
 :root {
-  --link-fonts: 2.5vh;
-  --lin-fonts-tiny: 10px;
-  --link-fonts-s: 1.2em;
-  --link-fonts-icons: 1.8em;
-  --link-fonts-l: 1.3vw;
+  --link-fonts: 14px;
+  --link-fonts-tiny: 10px;
+  --link-fonts-icons: 1.7em;
+  --link-fonts-l: 1.2vw;
   --link-fonts-xl: 1.5vw;
-  --bold-font: 700;
-  --title-fonts: clamp(3vh, 1.5em, 1.4vw);
+  --bold-font: 600;
+  --title-fonts: clamp(3vh, 2.2em, 2vw);
   --title-fonts-v: clamp(2vh, 1.5em, 3vw);
+  --title-label: 1.2em;
 }
 
 body {

@@ -1,13 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alta</title>
-    <link rel="stylesheet" href="css/estilos.css" />
-  </head>
-  <body>
-    <h1>Alta</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alta</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <h1>Data Form</h1>
+
+
+  <form class="alta-form" action="" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" name="promocion" value="BLACKMONDAY">
+
+    <div class="input-container">
+      <label class="alta-label" for="name">Name:</label>
+      <input id="name" type="text" name="name" autofocus required minlength="3" maxlength="20" value=""
+        placeholder="Product name">
+    </div>
+    <div class="input-container">
+      <label class="alta-label" for="price">Price:</label>
+      <input id="price" type="number" name="price" autofocus required min="0" step=".5" value="">
+    </div>
+    <div class="input-container">
+      <label class="alta-label" for="stock">Stock:</label>
+      <input id="stock" type="number" name="stock" autofocus required max="1000" value="">
+    </div>
+    <div class="input-container">
+      <label class="alta-label" for="brand">Brand:</label>
+      <select id="brand" name="brand" value="">
+        <option value="">Select a brand</option>
+        <option value="2">Apple</option>
+        <option value="3">Samsung</option>
+        <option value="4">Lenovo</option>
+        <option value="5">Motorola</option>
+        <option value="6">Xiaomi</option>
+        <option value="7">Sony</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <label class="alta-label" for="category">Category:</label>
+      <br>
+      <select id="category" name="category" size="8" value="">
+        <optgroup label="Gaming">
+          <option value="8">TV</option>
+          <option value="9">Consola</option>
+          <option value="10">Juego</option>
+          <option value="11">Joystick</option>
+        </optgroup>
+        <optgroup label="Smart">
+          <option value="12">TV</option>
+          <option value="13">Notebooks</option>
+          <option value="14">Drones</option>
+          <option value="15">Alexa</option>
+        </optgroup>
+        <optgroup label="Smarthpones">
+          <option value="16">Xiaomi</option>
+          <option value="17">Iphone</option>
+          <option value="18">Samsumg</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <label class="alta-label" for="foto">Foto:</label>
+      <input type="file" id="foto" name="foto">
+    </div>
+
+    <div class="input-container">
+      <label class="alta-label" for="details">Details:</label>
+      <br>
+      <textarea id="details" name="details"></textarea>
+    </div>
+
+    <div class="free-shipping">
+      <input type="checkbox" id="free-shipping" name="free-shipping" value="si">
+      <label class="alta-label" for="free-shipping">Free-shipping</label>
+    </div>
+
+    <div class="alta-submit">
+      <input id="submit-btn" type="submit" value="Send data">
+    </div>
+  </form>
+</body>
+
 </html>

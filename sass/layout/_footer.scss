@@ -34,7 +34,7 @@
 
         &__text {
           width: 100%;
-          font-size: 2.5vh;
+          font-size: var(--link-fonts);
           margin-top: 5px;
         }
       }
@@ -53,9 +53,9 @@
           align-items: center;
 
           &__search {
-            width: 100%;
+            width: 60%;
             margin: 5px 10px;
-            height: 8vh;
+            height: 6vh;
             border-radius: 5px;
           }
 
@@ -127,7 +127,7 @@
 
             .footer-form__search {
               max-height: 5vh;
-              width: 60%;
+              width: min(60%, 400px);
             }
           }
         }

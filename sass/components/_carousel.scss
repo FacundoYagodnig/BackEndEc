@@ -40,6 +40,12 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .carousel {
     margin-bottom: 20px;
+
+    .carousel-img {
+      &__img {
+        border-radius: 5px;
+      }
+    }
   }
 }
 
@@ -47,5 +53,11 @@
   .carousel {
     order: 2;
     width: 70%;
+
+    .carousel-img {
+      &__img {
+        border-radius: 5px;
+      }
+    }
   }
 }

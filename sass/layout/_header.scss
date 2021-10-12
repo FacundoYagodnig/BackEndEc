@@ -5,6 +5,8 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 1fr 90%;
+  background-color: #fff;
+  margin-bottom: 20px;
 }
 
 #menu {
@@ -23,6 +25,7 @@
             NAV BAR
 *********************************/
 .nav-bar {
+  display: none;
   width: 100%;
   background-color: #fefefe;
   grid-column: 1 / -1;
@@ -61,6 +64,7 @@
   display: flex;
   width: 100%;
   height: 100%;
+  max-height: 60px;
   grid-column: 1 / -1;
   grid-row: 1;
   order: 1;
@@ -68,7 +72,7 @@
   background-color: #2e2e2e;
 
   .search-bar__container {
-    width: 48%;
+    width: 100%;
     display: flex;
     align-items: center;
     text-align: center;
@@ -120,9 +124,13 @@
   }
 
   .search-bar__carrito-container {
-    flex: 0 0 3em;
-    width: 30%;
+    flex: 0 0 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--link-fonts-icons);
     background-color: goldenrod;
+    cursor: pointer;
   }
 }
 
@@ -130,9 +138,8 @@
             MENU TOGGLE
 *********************************/
 .menu-toggle {
-  display: none;
+  display: block;
   background-color: red;
-
   border: 2px solid black;
   flex: 0 0 3em;
   position: relative;
@@ -171,11 +178,8 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .main-header {
-    .menu-toggle {
-      display: block;
-      width: 100%;
-    }
-
+    margin: 0;
+    padding-bottom: 20px;
     .nav-bar {
       display: none;
 
@@ -195,6 +199,9 @@
     height: 100%;
     grid-template-rows: 7% 1fr 80%;
 
+    .menu-toggle {
+      display: none;
+    }
     .nav-bar {
       display: block;
       grid-row: 1;
