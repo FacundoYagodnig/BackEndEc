@@ -1,28 +1,28 @@
 .footer {
   display: grid;
   grid-template-rows: 90% 10%;
-  height: fit-content;
   background-color: #eeeeee;
 
   .container-footer {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-evenly;
     grid-row: 1;
-    height: 50vh;
+    height: 100%;
 
     .sign-up-box {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
+      align-items: center;
       height: 100%;
       text-align: center;
-      flex-direction: column;
       background-color: #eeeeee;
-      flex-grow: 1;
 
       .footer-sign-up {
+        height: 80%;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
         flex-wrap: wrap;
         background-color: #181d23;
         padding-bottom: 1em;
@@ -30,44 +30,63 @@
 
         &__title {
           width: 100%;
+          font-size: var(--title-fonts);
+          font-size: 2rem;
         }
 
         &__text {
-          width: 100%;
-          font-size: var(--link-fonts);
+          width: 63%;
           margin-top: 5px;
         }
-      }
 
-      .box-form {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        margin-top: 5px;
-        height: 50%;
-        .footer-form {
-          width: 100%;
-          margin-top: 5px;
+        .box-form {
           display: flex;
           justify-content: center;
-          align-items: center;
+          flex-wrap: wrap;
+          margin-top: 5px;
+          height: 30%;
 
-          &__search {
-            width: 60%;
-            margin: 5px 10px;
-            height: 6vh;
-            border-radius: 5px;
+          .footer-form {
+            width: 100%;
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__search {
+              width: 60%;
+              line-height: 12px;
+              height: min(44px, 8vh);
+              margin-left: 10px;
+              border-radius: 50px;
+              border: 2px solid #e1e1e1;
+            }
+
+            &__search:focus {
+              border: 2px solid orange;
+            }
+
+            ::placeholder {
+              padding-left: 20px;
+            }
+
+            &__submit {
+              display: block;
+              line-height: 12px;
+              position: relative;
+              background-color: rgb(238, 174, 56);
+              font-size: 12px;
+              left: -10%;
+              padding: clamp(13px, 0.7vw, 2rem);
+              border: 3px solid orange;
+              border-top-right-radius: 50px;
+              border-bottom-right-radius: 50px;
+              z-index: 3;
+            }
           }
-
-          &__submit {
+          .footer-terms {
             padding: 5px;
-            margin-right: 8px;
-            border-radius: 5px;
-            border: 1px solid black;
           }
-        }
-        .footer-terms {
-          padding: 5px;
         }
       }
     }
@@ -79,6 +98,34 @@
 
       .list-info {
         list-style: none;
+
+        .border-animation {
+          position: relative;
+        }
+
+        .border-animation::after {
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          left: 0px;
+          width: 0;
+          height: 3px;
+          background-color: orange;
+          z-index: 9999999;
+          transition: 0.3s;
+        }
+
+        .border-animation:hover {
+          color: #cb28d1;
+        }
+
+        .border-animation:hover::after {
+          width: 100%;
+        }
+
+        a:hover {
+          color: white;
+        }
       }
     }
   }
@@ -89,7 +136,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    height: 100%;
     text-align: center;
     color: white;
     background-color: #181d23;
@@ -97,37 +144,48 @@
 
   @media (min-width: 768px) {
     & {
+      grid-template-rows: 90% 15%;
       margin-top: 40px;
 
       .container-footer {
         display: grid;
-        grid-template-rows: 1fr 1fr;
-        height: fit-content;
+        grid-template-rows: 5fr 1fr;
 
         .sign-up-box {
           grid-row: 1;
           height: 100%;
-          align-self: flex-start;
+          align-self: center;
           border: 1px solid #dedede;
 
           .footer-sign-up {
-            height: 50%;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-          }
 
-          .box-form {
-            grid-row: 2;
-            justify-content: center;
-            align-items: center;
-            height: 50%;
-            margin: 0;
+            .box-form::before {
+              content: "";
+              position: absolute;
+              top: 64%;
+              left: 25%;
+              width: 50%;
+              height: 1px;
+              background-color: rgb(77, 77, 77);
+              z-index: 1;
+              transition: 0.3s;
+            }
 
-            .footer-form__search {
-              max-height: 5vh;
-              width: min(60%, 400px);
+            .box-form {
+              justify-content: center;
+              align-items: center;
+              height: 40%;
+              margin: 0;
+
+              .footer-form__search {
+                width: min(80%, 500px);
+                z-index: 2;
+              }
             }
           }
         }

@@ -3,7 +3,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: 10em auto 10em;
-  grid-template-rows: 1fr auto 20%;
+  grid-template-rows: max-content auto 10%;
   grid-template-areas: "header header header " " main main main " "footer footer footer";
 
   header {
@@ -12,16 +12,9 @@
 
   main {
     grid-area: main;
-    margin-top: 20px;
   }
 
   footer {
     grid-area: footer;
-  }
-}
-
-@media (min-width: 1024px) {
-  .big-container {
-    grid-template-rows: 1fr auto 30%;
   }
 }

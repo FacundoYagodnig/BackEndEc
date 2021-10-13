@@ -42,11 +42,15 @@
         </div>
 
         <form class="search-bar__form-container">
-          <label class="search-bar__form-label" for="busqueda">Buscar</label>
+          <label class="search-bar__form-label" for="busqueda">Search for products</label>
           <input class="search-bar__form-search" id="busqueda" type="search" />
           <input class="search-bar__form-submit" type="submit" value="Buscar" />
         </form>
-        <div class="search-bar__carrito-container"><i class="fas fa-shopping-cart"></i></div>
+        <div class="search-bar__carrito-container">
+          <a class="search-bar__carrito-link" href="#">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </div>
         <div class="menu-toggle">
           <label class="menu-toggle__label" for="menu">
             <span class="menu-toggle__pan-arriba"></span>
@@ -56,6 +60,8 @@
         </div>
       </div>
       <!-- search-bar -->
+    </header>
+    <main>
 
       <section class="section-carousel">
 
@@ -96,15 +102,13 @@
         <!-- carousel -->
         <div class="carousel">
           <div class="carousel-img">
-            <img class="carousel-img__img" src="img/productos/auriculares-sony.jpg" alt="iphone11">
+            <img class="carousel-img__img" src="img/productos/televisor-lg.jpg" alt="iphone11">
             <span class="carousel-img__prev"><i class="fas fa-chevron-left"></i></span>
             <span class="carousel-img__next"><i class="fas fa-chevron-right"></i></span>
           </div>
         </div>
         <!-- carousel -->
       </section>
-    </header>
-    <main>
 
       <!-- section-cards -->
       <section class="section-cards">
@@ -400,39 +404,39 @@
             <p class="footer-sign-up__text">Sign up for all the news about our latest arrivals and get an exclusive
               early
               access shopping. Join 60.000+ Subscribers and get a new discount coupon on every Saturday.</p>
+            <form class="box-form">
+              <div class="footer-form">
+                <label class="footer-form__label" for="subscribe"></label>
+                <input class="footer-form__search" id="subscribe" type="search" placeholder="Your email" />
+                <input class="footer-form__submit" type="submit" value="subscribe" />
+              </div>
+              <div class="footer-terms">
+                <input type="checkbox" id="terms" name="terms" value="si">
+                <label for="terms">I have read and agree with the terms of the <a href="#">Privacy Policy</a></label>
+              </div>
+            </form>
           </div>
 
-          <form class="box-form">
-            <div class="footer-form">
-              <label class="footer-form__label" for="subscribe"></label>
-              <input class="footer-form__search" id="subscribe" type="search" placeholder="Your email" />
-              <input class="footer-form__submit" type="submit" value="subscribe" />
-            </div>
-            <div class="footer-terms">
-              <input type="checkbox" id="terms" name="terms" value="si">
-              <label for="terms">I have read and agree with the terms of the <a>Privacy Policy</a></label>
-            </div>
-          </form>
         </div>
 
         <div class="box-information">
           <div class="box-information__flex">
             <h3>INFORMATION</h3>
             <ul class="list-info">
-              <li class="list-info__link"><a>About Us</a></li>
-              <li class="list-info__link"><a>Support</a></li>
-              <li class="list-info__link"><a>Warranty</a></li>
-              <li class="list-info__link"><a>Delivery</a></li>
-              <li class="list-info__link"><a>Products</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">About Us</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Support</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Warranty</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Delivery</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Products</a></li>
             </ul>
           </div>
 
           <div class="box-information__flex">
             <h3>STORE INFORMATION</h3>
             <ul class="list-info">
-              <li class="list-info__link"><a>Contact us</a></li>
-              <li class="list-info__link"><a>Location</a></li>
-              <li class="list-info__link"><a>Email</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Contact us</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Location</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Email</a></li>
 
             </ul>
           </div>
@@ -441,9 +445,10 @@
             <h3>SOCIAL</h3>
             <ul class="list-info">
               <li class="list-info__link"><a href="#"><span><i class="fab fa-facebook"></i></span></a></li>
-              <li class="list-info__link"><a><i class="fab fa-twitter-square"></i></a></li>
-              <li class="list-info__link"><a><i class="fab fa-instagram"></i></a></li>
-              <li class="list-info__link"><a><i class="fab fa-whatsapp"></i></a></li>
+              <li class="list-info__link"><a href="#"><i class="fab fa-twitter-square"></i></a>
+              </li>
+              <li class="list-info__link"><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li class="list-info__link"><a href="#"><i class="fab fa-whatsapp"></i></a></li>
             </ul>
           </div>
 
