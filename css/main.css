@@ -9,7 +9,7 @@
 
 body {
   box-sizing: border-box;
-  background-color: #eeeeee;
+  background-color: #fefefe;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -245,8 +245,11 @@ body {
   color: #333;
   text-decoration: none;
   font-weight: var(--bold-font);
-  width: 100%;
+  width: fit-content;
   position: relative;
+}
+.nav-bar .nav-bar__nav-link:hover {
+  color: #eed4d4;
 }
 
 /*********************************
@@ -294,15 +297,15 @@ body {
   height: 100%;
   max-height: 28px;
   margin: 2px;
+  padding: 2px;
 }
 .search-bar .search-bar__form-submit {
-  background-color: darkslategray;
-  border: none;
-  width: 7%;
+  height: 100%;
   text-align: center;
-  padding: 5px;
+  padding: 4px;
   position: relative;
   right: 6%;
+  border: none;
 }
 .search-bar .search-bar__carrito-container {
   display: flex;
@@ -802,11 +805,10 @@ body {
 /*MAIN*/
 /*SECTION-CARDS*/
 .section-cards {
-  background-color: #fff;
   color: white;
   width: 100%;
   margin: 40px auto;
-  border: 1px solid #dedede;
+  border: 2px solid #f3f4f8;
 }
 .section-cards h1,
 .section-cards p {
@@ -819,15 +821,11 @@ body {
   line-height: 1.8;
   margin-bottom: 10px;
 }
-.section-cards__header h1 {
-  font-size: var(--title-fonts);
-}
 .section-cards .cards-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 1em;
-  background-color: #fefefe;
 }
 @media (min-width: 768px) {
   .section-cards {
