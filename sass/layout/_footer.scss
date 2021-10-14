@@ -1,13 +1,14 @@
 .footer {
-  display: grid;
-  grid-template-rows: 90% 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #eeeeee;
 
   .container-footer {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    grid-row: 1;
+    justify-content: space-around;
     height: 100%;
 
     .sign-up-box {
@@ -19,7 +20,7 @@
       background-color: #eeeeee;
 
       .footer-sign-up {
-        height: 80%;
+        height: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -30,13 +31,12 @@
 
         &__title {
           width: 100%;
-          font-size: var(--title-fonts);
-          font-size: 2rem;
+          font-size: 1.4em;
         }
 
         &__text {
-          width: 63%;
-          margin-top: 5px;
+          width: 90%;
+          font-size: 13px;
         }
 
         .box-form {
@@ -50,13 +50,12 @@
             width: 100%;
             margin-top: 5px;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
 
             &__search {
-              width: 60%;
-              line-height: 12px;
-              height: min(44px, 8vh);
+              width: min(269px, 70%);
+              height: min(30px, 8vh);
               margin-left: 10px;
               border-radius: 50px;
               border: 2px solid #e1e1e1;
@@ -66,26 +65,31 @@
               border: 2px solid orange;
             }
 
-            ::placeholder {
-              padding-left: 20px;
-            }
-
             &__submit {
               display: block;
-              line-height: 12px;
               position: relative;
               background-color: rgb(238, 174, 56);
-              font-size: 12px;
-              left: -10%;
-              padding: clamp(13px, 0.7vw, 2rem);
+              font-size: 11px;
+              left: -17%;
+              padding: clamp(6px, 0.8vw, 2rem);
               border: 3px solid orange;
               border-top-right-radius: 50px;
               border-bottom-right-radius: 50px;
               z-index: 3;
             }
+
+            .footer-form__label {
+              position: relative;
+              font-size: 10px;
+              text-align: center;
+              left: 21%;
+              z-index: 22;
+              color: #181d23;
+            }
           }
           .footer-terms {
-            padding: 5px;
+            padding: 15px;
+            font-size: 12px;
           }
         }
       }
@@ -116,11 +120,15 @@
         }
 
         .border-animation:hover {
-          color: #cb28d1;
+          color: #fff;
         }
 
         .border-animation:hover::after {
           width: 100%;
+        }
+
+        a {
+          color: #181d23;
         }
 
         a:hover {
@@ -131,8 +139,7 @@
   }
 
   .footer-copy {
-    padding: 5px;
-    grid-row: 2;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,6 +147,8 @@
     text-align: center;
     color: white;
     background-color: #181d23;
+    font-size: 12px;
+    padding: 5px;
   }
 
   @media (min-width: 768px) {
@@ -149,7 +158,7 @@
 
       .container-footer {
         display: grid;
-        grid-template-rows: 5fr 1fr;
+        grid-template-rows: 2fr 1fr;
 
         .sign-up-box {
           grid-row: 1;
@@ -167,9 +176,9 @@
             .box-form::before {
               content: "";
               position: absolute;
-              top: 64%;
-              left: 25%;
-              width: 50%;
+              top: 48%;
+              left: 9%;
+              width: 80%;
               height: 1px;
               background-color: rgb(77, 77, 77);
               z-index: 1;
@@ -182,9 +191,22 @@
               height: 40%;
               margin: 0;
 
-              .footer-form__search {
-                width: min(80%, 500px);
-                z-index: 2;
+              .footer-form {
+                .footer-form__search {
+                  width: min(80%, 500px);
+                  height: min(34px, 8vh);
+                  z-index: 2;
+                }
+
+                .footer-form__submit {
+                  padding: clamp(8px, 0.4vw, 2rem);
+                  left: -12%;
+                }
+
+                .footer-form__label {
+                  font-size: 1em;
+                  left: 13%;
+                }
               }
             }
           }

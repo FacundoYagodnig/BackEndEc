@@ -184,7 +184,6 @@ body {
 @media (min-width: 1024px) {
   .carousel {
     height: min(350px, 100%);
-    width: 90%;
     margin: 0;
   }
   .carousel .carousel-img__img {
@@ -198,6 +197,9 @@ body {
   display: flex;
   height: max(50px, 100%);
   background-color: #fff;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 #menu {
@@ -205,11 +207,15 @@ body {
 }
 
 #menu:checked + .nav-bar {
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  order: 2;
+  height: 10vh;
 }
 
 #menu:checked ~ .search-bar .menu-toggle__label {
-  background-color: yellow;
+  background-color: #fefefe;
 }
 
 /*********************************
@@ -218,24 +224,21 @@ body {
 .nav-bar {
   display: none;
   width: 100%;
+  height: 100%;
   background-color: #fefefe;
-  grid-column: 1/-1;
-  grid-row: 1;
 }
 .nav-bar .nav-bar__nav-list {
   height: 100%;
   display: flex;
   list-style-type: none;
   justify-content: space-between;
+  gap: 1em;
   align-items: center;
-  padding-left: 0px;
-  /*boostrap por defecto tiene pl = 2px, se lo quitamos*/
-  margin-bottom: 0px;
-  /*boostrap por defecto tiene mb = 2px, se lo quitamos*/
 }
 .nav-bar .nav-bar__nav-item {
   text-align: center;
   width: 100%;
+  margin: 5px;
 }
 .nav-bar .nav-bar__nav-link {
   display: block;
@@ -265,6 +268,7 @@ body {
 }
 .search-bar .search-bar__container .search-bar__logo-container {
   width: 100%;
+  color: #fff;
   font-size: var(--title-fonts);
   align-self: center;
 }
@@ -307,7 +311,8 @@ body {
   justify-content: center;
   align-items: center;
   font-size: var(--link-fonts-icons);
-  background-color: goldenrod;
+  background-color: white;
+  border: 1px solid #333;
   cursor: pointer;
   flex: 0 0 2em;
 }
@@ -360,9 +365,6 @@ body {
   .main-header .nav-bar {
     display: none;
   }
-  .main-header .nav-bar .nav-bar__nav-list {
-    flex-direction: column;
-  }
   .main-header .search-bar {
     max-height: 73px;
   }
@@ -394,10 +396,9 @@ body {
 }
 .big-container {
   width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: 10em auto 10em;
-  grid-template-rows: max-content auto 10%;
+  grid-template-rows: max-content auto auto;
   grid-template-areas: "header header header " " main main main " "footer footer footer";
 }
 .big-container header {
@@ -411,15 +412,16 @@ body {
 }
 
 .footer {
-  display: grid;
-  grid-template-rows: 90% 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #eeeeee;
 }
 .footer .container-footer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  grid-row: 1;
+  justify-content: space-around;
   height: 100%;
 }
 .footer .container-footer .sign-up-box {
@@ -431,7 +433,7 @@ body {
   background-color: #eeeeee;
 }
 .footer .container-footer .sign-up-box .footer-sign-up {
-  height: 80%;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -442,12 +444,11 @@ body {
 }
 .footer .container-footer .sign-up-box .footer-sign-up__title {
   width: 100%;
-  font-size: var(--title-fonts);
-  font-size: 2rem;
+  font-size: 1.4em;
 }
 .footer .container-footer .sign-up-box .footer-sign-up__text {
-  width: 63%;
-  margin-top: 5px;
+  width: 90%;
+  font-size: 13px;
 }
 .footer .container-footer .sign-up-box .footer-sign-up .box-form {
   display: flex;
@@ -460,13 +461,12 @@ body {
   width: 100%;
   margin-top: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-form__search {
-  width: 60%;
-  line-height: 12px;
-  height: min(44px, 8vh);
+  width: min(269px, 70%);
+  height: min(30px, 8vh);
   margin-left: 10px;
   border-radius: 50px;
   border: 2px solid #e1e1e1;
@@ -474,24 +474,29 @@ body {
 .footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-form__search:focus {
   border: 2px solid orange;
 }
-.footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-form ::placeholder {
-  padding-left: 20px;
-}
 .footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-form__submit {
   display: block;
-  line-height: 12px;
   position: relative;
   background-color: #eeae38;
-  font-size: 12px;
-  left: -10%;
-  padding: clamp(13px, 0.7vw, 2rem);
+  font-size: 11px;
+  left: -17%;
+  padding: clamp(6px, 0.8vw, 2rem);
   border: 3px solid orange;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   z-index: 3;
 }
+.footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-form .footer-form__label {
+  position: relative;
+  font-size: 10px;
+  text-align: center;
+  left: 21%;
+  z-index: 22;
+  color: #181d23;
+}
 .footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-terms {
-  padding: 5px;
+  padding: 15px;
+  font-size: 12px;
 }
 .footer .container-footer .box-information {
   display: none;
@@ -516,17 +521,19 @@ body {
   transition: 0.3s;
 }
 .footer .container-footer .box-information .list-info .border-animation:hover {
-  color: #cb28d1;
+  color: #fff;
 }
 .footer .container-footer .box-information .list-info .border-animation:hover::after {
   width: 100%;
+}
+.footer .container-footer .box-information .list-info a {
+  color: #181d23;
 }
 .footer .container-footer .box-information .list-info a:hover {
   color: white;
 }
 .footer .footer-copy {
-  padding: 5px;
-  grid-row: 2;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -534,6 +541,8 @@ body {
   text-align: center;
   color: white;
   background-color: #181d23;
+  font-size: 12px;
+  padding: 5px;
 }
 @media (min-width: 768px) {
   .footer {
@@ -542,7 +551,7 @@ body {
   }
   .footer .container-footer {
     display: grid;
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: 2fr 1fr;
   }
   .footer .container-footer .sign-up-box {
     grid-row: 1;
@@ -560,9 +569,9 @@ body {
   .footer .container-footer .sign-up-box .footer-sign-up .box-form::before {
     content: "";
     position: absolute;
-    top: 64%;
-    left: 25%;
-    width: 50%;
+    top: 48%;
+    left: 9%;
+    width: 80%;
     height: 1px;
     background-color: #4d4d4d;
     z-index: 1;
@@ -574,9 +583,18 @@ body {
     height: 40%;
     margin: 0;
   }
-  .footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-form__search {
+  .footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-form .footer-form__search {
     width: min(80%, 500px);
+    height: min(34px, 8vh);
     z-index: 2;
+  }
+  .footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-form .footer-form__submit {
+    padding: clamp(8px, 0.4vw, 2rem);
+    left: -12%;
+  }
+  .footer .container-footer .sign-up-box .footer-sign-up .box-form .footer-form .footer-form__label {
+    font-size: 1em;
+    left: 13%;
   }
   .footer .container-footer .box-information {
     grid-row: 2;
@@ -720,7 +738,7 @@ body {
     height: 350px;
   }
   .section-carousel .desplegable {
-    width: 20%;
+    width: min(250px, 20%);
     height: min(350px, 100%);
   }
   .section-carousel .desplegable .desplegable-list li:nth-child(3) {
@@ -748,7 +766,6 @@ body {
     gap: 15px;
   }
   .section-carousel .desplegable {
-    width: min(170px, 20%);
     height: min(350px, 100%);
     margin: 0;
     border-radius: 15px;
@@ -902,7 +919,7 @@ h1 {
 .alta-form #submit-btn {
   margin: 20px auto;
   width: min(40%, 200px);
-  height: 8vh;
+  height: 4vh;
   font-size: 1em;
   font-weight: var(--bold-font);
 }

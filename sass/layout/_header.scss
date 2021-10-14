@@ -5,6 +5,9 @@
   display: flex;
   height: max(50px, 100%);
   background-color: #fff;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 #menu {
@@ -12,11 +15,15 @@
 }
 
 #menu:checked + .nav-bar {
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  order: 2;
+  height: 10vh;
 }
 
 #menu:checked ~ .search-bar .menu-toggle__label {
-  background-color: yellow;
+  background-color: #fefefe;
 }
 
 /*********************************
@@ -25,23 +32,22 @@
 .nav-bar {
   display: none;
   width: 100%;
+  height: 100%;
   background-color: #fefefe;
-  grid-column: 1 / -1;
-  grid-row: 1;
 
   .nav-bar__nav-list {
     height: 100%;
     display: flex;
     list-style-type: none;
     justify-content: space-between;
+    gap: 1em;
     align-items: center;
-    padding-left: 0px; /*boostrap por defecto tiene pl = 2px, se lo quitamos*/
-    margin-bottom: 0px; /*boostrap por defecto tiene mb = 2px, se lo quitamos*/
   }
 
   .nav-bar__nav-item {
     text-align: center;
     width: 100%;
+    margin: 5px;
   }
 
   .nav-bar__nav-link {
@@ -73,6 +79,7 @@
 
     .search-bar__logo-container {
       width: 100%;
+      color: #fff;
       font-size: var(
         --title-fonts
       ); // clamp, es una funcion que tambien ahorra mucho codigo @media : clamp(valor minimo, valor por defecto , y valor maximo)
@@ -124,7 +131,8 @@
     justify-content: center;
     align-items: center;
     font-size: var(--link-fonts-icons);
-    background-color: goldenrod;
+    background-color: white;
+    border: 1px solid #333;
     cursor: pointer;
     flex: 0 0 2em;
 
@@ -184,7 +192,6 @@
       display: none;
 
       .nav-bar__nav-list {
-        flex-direction: column;
       }
     }
 
