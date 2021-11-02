@@ -19,7 +19,7 @@
   -moz-transition: all 0.2s;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-
+ 
   &:hover,
   &:focus {
     -moz-transform: scale(1.03);
@@ -51,17 +51,30 @@
   &__content {
     position: absolute;
     bottom: 0;
-    padding: 2.5em 1em 1em;
+    padding: 1.5em 1em 1em;
     font-size: 0.8rem;
     height: 150px;
     width: 100%;
     z-index: -1;
     transition: all 0.2s;
     text-align: center;
+
+    .btn-container{
+     
+
+      button{
+        width: 33%;
+      }
+    }
+   
   }
 
+
+
+ 
+
   &:hover &__content {
-    padding-top: 4em;
+    padding-top: 2.8em;
   }
 
   &:nth-child(10n + 1) &__content {
@@ -131,3 +144,5 @@
     }
   }
 }
+
+
