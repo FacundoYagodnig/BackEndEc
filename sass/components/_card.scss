@@ -49,19 +49,32 @@
   }
 
   &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
     position: absolute;
     bottom: 0;
-    padding: 1.5em 1em 1em;
-    font-size: 0.8rem;
+    padding: 2.1em 0em;
+    font-size: 0.7rem;
     height: 150px;
     width: 100%;
     z-index: -1;
     transition: all 0.2s;
     text-align: center;
 
-    .btn-container{
-     
+    h3{
+      max-height: 20px;
+      margin-top: 5px;
+    }
 
+    .card__description{
+      margin: 10px 0;
+    }
+
+    .btn-container{
+      width: 100%;
       button{
         width: 33%;
       }
