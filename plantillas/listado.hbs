@@ -1,0 +1,40 @@
+{{#if products.length}}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Details</th>
+            <th>Photo</th>
+        </tr>
+        {{#each products}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td>{{stock}}</td>
+            <td>{{brand}}</td>
+            <td>{{category}}</td>
+            <td>{{details}}</td>
+            <td>
+                <img src={{photo}} alt={{name}}>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+{{/if}}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+

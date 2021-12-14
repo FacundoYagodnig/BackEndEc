@@ -926,7 +926,7 @@ body {
   }
 }
 
-body {
+.body-alta {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -938,8 +938,12 @@ h1 {
   text-align: center;
 }
 
-.alta-form {
+.alta-container {
   width: 80%;
+}
+.alta-container .alta-container__form {
+  height: 100%;
+  width: 100%;
   margin: 10px auto;
   padding-bottom: 10px;
   display: flex;
@@ -949,7 +953,7 @@ h1 {
   height: 100%;
   text-align: center;
 }
-.alta-form .input-container {
+.alta-container .alta-container__form .input-container {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -958,50 +962,69 @@ h1 {
   flex-direction: column;
   margin: 10px auto;
 }
-.alta-form .input-container .alta-label {
+.alta-container .alta-container__form .input-container .validator-cartel {
+  width: 500px;
+  height: 30px;
+  background-color: yellow;
+  border: 2px solid red;
+}
+.alta-container .alta-container__form .input-container .alta-label {
   width: 100%;
   display: block;
   margin: 5px auto;
   font-weight: var(--bold-font);
   font-size: var(--title-label);
 }
-.alta-form .input-container input {
+.alta-container .alta-container__form .input-container input {
   width: min(80%, 500px);
   height: 30px;
 }
-.alta-form .input-container ::-moz-placeholder {
+.alta-container .alta-container__form .input-container ::-moz-placeholder {
   padding-left: 5px;
   font-size: 16px;
 }
-.alta-form .input-container :-ms-input-placeholder {
+.alta-container .alta-container__form .input-container :-ms-input-placeholder {
   padding-left: 5px;
   font-size: 16px;
 }
-.alta-form .input-container ::placeholder {
+.alta-container .alta-container__form .input-container ::placeholder {
   padding-left: 5px;
   font-size: 16px;
 }
-.alta-form .input-container #details {
+.alta-container .alta-container__form .input-container #details {
   width: min(72%, 430px);
   height: 90px;
   margin-bottom: 10px;
 }
-.alta-form .input-container #foto {
+.alta-container .alta-container__form .input-container #foto {
   width: 10em;
   margin: 5px auto;
 }
-.alta-form .free-shipping {
+.alta-container .alta-container__form .free-shipping {
   width: 100%;
   height: 31px;
   font-weight: var(--bold-font);
   font-size: var(--title-label);
 }
-.alta-form #submit-btn {
+.alta-container .alta-container__form #submit-btn {
   margin: 20px auto;
   width: min(40%, 200px);
   height: 4vh;
   font-size: 1em;
   font-weight: var(--bold-font);
+}
+.alta-container table, .alta-container th, .alta-container td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.alta-container table {
+  width: 90%;
+}
+.alta-container #product-list {
+  width: 100%;
+}
+.alta-container th, .alta-container td {
+  padding: 5px;
 }
 
 .contact-form {
