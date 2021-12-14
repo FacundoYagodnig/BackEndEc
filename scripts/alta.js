@@ -4,9 +4,6 @@ function initAlta() {
   const alta_container = document.querySelector(".alta-container");
   const form = alta_container.querySelector("form");
   const selects = alta_container.querySelectorAll('select')
-//   let option = selects[0].options[selects[0].selectedIndex].text
-
-  const selectCategoryValue = selects[1].options[selects[1].selectedIndex]
   const inputs = alta_container.querySelectorAll("input[type=text]");
   const btnSubmit = alta_container.querySelector("#submit-btn");
   let products = [];
