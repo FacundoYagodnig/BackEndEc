@@ -69,7 +69,6 @@ function initAlta() {
 
     let option = selects[0].options[selects[0].selectedIndex].text
     let option2 = selects[1].options[selects[1].selectedIndex].text
-    
       
     let product = {
       name: inputs[0].value,
@@ -80,8 +79,6 @@ function initAlta() {
       photo: inputs[3].value,
       details: inputs[4].value,
     };
-
-    
 
     products.push(product);
     console.log(products);
