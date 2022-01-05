@@ -1,4 +1,10 @@
-{{#if products.length}}
+{{#if validos}}
+    <td>Valid data</td>
+{{else}}
+    <td>Invalid data</td>
+{{/if}}
+                
+{{#if productsList.length}}
     <table>
         <tr>
             <th>Name</th>
@@ -8,8 +14,10 @@
             <th>Category</th>
             <th>Details</th>
             <th>Photo</th>
+            <th>Delivery</th>
+            <th>Action</th>
         </tr>
-        {{#each products}}
+        {{#each productsList}}
         <tr>
             <td>{{name}}</td>
             <td>{{price}}</td>
@@ -20,9 +28,24 @@
             <td>
                 <img src={{photo}} alt={{name}}>
             </td>
+            {{#if send}}
+                <td>Si</td>
+            {{else}}
+                <td>No</td>
+            {{/if}}
+            <td>
+            {{#if ../validos}}
+                <button onclick="updateProduct({{id}})">Update</button>
+            {{else}}
+                <button disabled onclick="updateProduct({{id}})">Update</button>
+            {{/if}}
+                <button onclick="deleteProduct({{id}})">Delete</button>
+            </td>
         </tr>
         {{/each}}
     </table>
+    {{else}}
+    <h3>No products found</h3>
 {{/if}}
     
 
