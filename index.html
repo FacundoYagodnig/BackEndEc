@@ -45,6 +45,7 @@
           <input class="search-bar__form-submit" type="submit" value="Buscar" />
         </form>
         <div class="search-bar__carrito-container">
+          <span class="badge-cart" id="badge-cart">0</span>
           <a class="search-bar__carrito-link" href="#">
             <i class="fas fa-shopping-cart"></i>
           </a>
@@ -59,6 +60,11 @@
       </div>
       <!-- search-bar -->
     </header>
+
+      <!-- --------- VISTA DEL CARRITO ----------- -->
+      <div class="section-carrito"></div>
+      <!-- --------------------------------------- -->
+  
     <main> </main>
     <footer class="footer">
       <div class="container-footer">
@@ -127,18 +133,31 @@
 
   </div>
   
-  <!-- script librerias -->
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+ <!-- script librerias -->
+ <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-  <!-- scripts plantillas -->
-  <script src="js/alta.js" id="init-alta"></script>
-  <script src="js/inicio.js" id="init-alta"></script>
-  <script src="js/carrito.js" id="init-alta"></script>
-  <script src="js/nosotros.js" id="init-alta"></script>
-  <script src="js/contacto.js" id="init-alta"></script>
-  <script src="js/http.client.js"></script>
-  <script src="js/productos.service.js"></script>
-  <script src="js/products.js"></script>
+ <!-- clientes http -->
+ <script src="js/client/http.client.js"></script>
+
+ <!-- servicios -->
+ <script src="js/services/products.services.js"></script>
+ <script src="js/services/carrito.services.js"></script>
+
+ <!-- scripts modelos --> 
+ <script src="js/models/carrito.model.js"></script>
+ <script src="js/models/products.model.js"></script>
+ 
+ 
+ <!-- scripts controladores -->
+ <script src="js/controllers/products.js"></script>
+ <script src="js/controllers/carrito.js"></script>
+
+ <!-- scripts menu -->
+  <script src="js/menu/alta.js" id="init-alta"></script>
+  <script src="js/menu/inicio.js"></script>
+  <script src="js/menu/nosotros.js"></script>
+  <script src="js/menu/contacto.js"></script>
+  <script src="js/menu/carrito.js"></script>
 
   <!-- main script -->
   <script src="js/main.js"></script>

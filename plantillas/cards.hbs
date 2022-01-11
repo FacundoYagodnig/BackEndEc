@@ -1,21 +1,25 @@
-{{#each cards}}
-<a class="card">
-    <article class="card__article">
-        <div 
-            class="card__image"
-            style="background-image: url({{image}})">
-        </div>
 
-        <div class="card__content">
-        <h3 class="card__heading">{{heading}}</h3>
-        <div class="card__description">
-            <p>{{description}}</p>
-        </div>
-        <div class="btn-container">
-            <button class="btn-minus" id="btn-minus">-</button>
-            <button class="btn-plus" id="btn-plus">+</button>
-        </div>
-        </div>
-    </article>
-</a>
-{{/each}}
+{{#if cards.length}}
+    {{#each cards}}
+    <a class="card"  >
+        <article class="card__article">
+            <div 
+                class="card__image"
+                style="background-image: url({{photo}})">
+            </div>
+
+            <div class="card__content">
+            <h3 class="card__heading">{{name}}</h3>
+            <div class="card__description">
+                <p>{{details}}</p>
+            </div>
+            <div class="btn-container">
+                <button class="btn-minus" id="btn-minus" onclick="addProduct(event, {{id}})">COMPRAR PRODUCTO</button>
+            </div>
+            </div>
+        </article>
+    </a>
+    {{/each}}
+{{else}}
+    <h2>No se encontraron products</h2>
+{{/if}}

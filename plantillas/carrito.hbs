@@ -1,0 +1,34 @@
+{{#if carrito.length}}
+
+    <div class="carrito-container">
+        <h2>Tus productos</h2>
+
+    {{#each carrito}}
+
+   
+        <div class="carrito-body">
+            <div><img src={{photo}} ></div>
+            <div>
+                <h3>{{name}}</h3>
+                <p>${{price}}</p>
+                <p><strong>{{cantidad}}</strong></p>
+                <div> 
+                    <button class="btn-remove" onclick="removeProduct(event,{{id}})">-</button>
+                    <button class="btn-add" onclick="addProduct(event,{{id}})">+</button>
+                </div>
+              
+            </div>
+        </div>
+    {{/each}}
+
+        <div class="carrito-footer">
+            <p><strong> Total Compra: {{total}}</strong></p>
+            <button class="btn-vaciarCarrito" onclick="carritoController.vaciarCarrito({{id}})">VACIAR CARRITO</button> 
+            <button class="btn-comprar" onclick="carritoController.enviarCarrito()">COMPRAR</button>
+        </div>
+
+    </div>
+
+    {{else}}
+      <h2>El carrito esta vacio!</h2>
+{{/if}}
