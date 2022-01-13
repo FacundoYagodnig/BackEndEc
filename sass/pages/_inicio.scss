@@ -68,7 +68,8 @@
 
   .cards-container {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1em;
   }
@@ -84,7 +85,7 @@
         border-radius: 5px;
         margin: 0;
         padding: 10px;
-        justify-content: space-evenly;
+        flex-wrap: nowrap;
       }
     }
 

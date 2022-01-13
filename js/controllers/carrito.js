@@ -3,6 +3,7 @@ class CarritoController extends CarritoModel {
     constructor(){
         super()      
         this.sectionCarrito = document.querySelector('.section-carrito')
+        this.sectionCarrito__body = document.querySelector('.carrito-body')
         try{
         this.carrito = JSON.parse(localStorage.getItem('carrito')) || [] //si existe en el localstorage hace el get y sino me devuelve un array vacio
         }
@@ -29,9 +30,8 @@ class CarritoController extends CarritoModel {
        if(!this.elProductoEstaEnElCarrito(producto)){ //si el producto no esta en el Carrito, 
            producto.cantidad =  1 //le agrego la prop cantidad = 1
            this.carrito.push(producto) // y lo pusheo AL CARRITO Y A PARTICAR DE ACA, EL PRODUCTO EXISTE EN EL CON LA PROPIEDAD CANTIDAD 
-        } 
-        else { 
-
+        } else{
+    
             let productoCarrito = this.obtenerProductoDeCarrito(producto) //si el producto ya existe, lo busco y le sumo a la cantidad++
             productoCarrito.cantidad++ 
             console.log( this.carrito)
@@ -39,30 +39,53 @@ class CarritoController extends CarritoModel {
             console.log('Cantidad: ' + productoCarrito.cantidad)
         }
 
-       this.updateCartNumber()
-       renderCarrito(this.carrito)
+        renderCarrito(this.carrito)
+        this.updateCartNumber()
+        this.updateCartTotal()
+        console.log(this.carrito)
+      
        localStorage.setItem('carrito', JSON.stringify(this.carrito))
     }
 
-    //actualiza el numero de la cantidad que hay en el carrito
+
+    updateCartTotal(){
+        const nTotal =  this.carrito.reduce(                  
+            (acc, { cantidad, price }) => acc + cantidad * price,
+            0
+        );
+
+        if(this.carrito.length > 0) {
+        let total = document.querySelector('.total')
+        this.carrito.total = nTotal
+        total.innerHTML = nTotal
+        };
+
+        this.carrito.map(producto => { 
+            producto.total = nTotal
+        });
+    }
+
+    //actualiza el numero de la cantidad que hay en el carrito en el badge
     updateCartNumber() { 
         let badgeCart = document.querySelector('#badge-cart')
-
+       
         const nCantidad = this.carrito.reduce(        //reduce me sirve para cuando voy sumando , tener el valor acumulado y sumarselo a la cantidad
             (acc, { cantidad }) => acc + cantidad,
             0
           );
-       
+
         if (this.carrito.length === 0) {
           badgeCart.innerHTML = "0";
-          this.carrito = [];
-          return;
+          this.carrito = []; 
+          return
         }
 
-        badgeCart.textContent = nCantidad;
+        badgeCart.textContent = nCantidad;  
+        console.log(nCantidad)
     }
 
   removeToCart(producto,id){
+      
     let productoCarrito = this.obtenerProductoDeCarrito(producto)
     productoCarrito.cantidad--
     
@@ -79,21 +102,22 @@ class CarritoController extends CarritoModel {
     console.log(this.carrito)
     console.log('Cantidad: ' + productoCarrito.cantidad)
     this.updateCartNumber()
+    this.updateCartTotal()
     renderCarrito(this.carrito)
     localStorage.setItem('carrito', JSON.stringify(this.carrito))
     
   }
 
-  async vaciarCarrito(id) {
+  async vaciarCarrito() {
         this.carrito = []
         this.updateCartNumber()
         localStorage.setItem('carrito', JSON.stringify(this.carrito)) //actualizamos el localStorage
         await renderCarrito(this.carrito)   
-        this.carritoDelay()                          //renderizamos con la info nueva
+        this.carritoDelay()                //renderizamos con la info nueva
     }
 
     //timeout para el carrito cuando esta vacio y no quede abierto siempre
-     carritoDelay() {
+    carritoDelay() {
 
         if(this.carrito.length === 0){
             setTimeout(() => {
@@ -108,17 +132,10 @@ class CarritoController extends CarritoModel {
         },1500)
     }
 
-
     async enviarCarrito() {
-
-        this.sectionCarrito.innerHTML = '<h2>Enviando productos...</h2>'
-        await carritoService.saveCarritoService(this.carrito)
-        this.carrito = []
-
-        localStorage.setItem('carrito',this.carrito)
-        this.sectionCarrito.innerHTML = '<h2>Productos Comprados con exito!</h2>'
-        this.updateCartNumber()
-        this.carritoDelay()
+        this.sectionCarrito__body.innerHTML = '<h2>Enviando productos...</h2>'
+        this.vaciarCarrito()
+        this.sectionCarrito__body.innerHTML = '<h2>Productos Comprados con exito!</h2>'
     }
 }
 

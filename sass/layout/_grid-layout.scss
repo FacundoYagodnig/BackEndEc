@@ -1,7 +1,7 @@
 .big-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   grid-template-areas: "header header header header" "main main main main" "footer footer footer footer";
 
   header {

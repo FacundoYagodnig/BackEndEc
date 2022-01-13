@@ -97,6 +97,7 @@
         details: this.inputs[4].value,
         send: this.inputs[5].checked,
         cantidad : 0,
+        total:0,
     };
   }
 

@@ -61,12 +61,12 @@ body {
 
 .card {
   outline: none;
+  display: flex;
   flex-wrap: wrap;
-  width: min(45%, 200px);
+  width: min(80%, 300px);
   height: 320px;
   flex-direction: column;
   overflow: hidden;
-  display: flex;
   position: relative;
   isolation: isolate;
   color: #fcfdfe;
@@ -157,6 +157,11 @@ body {
 .card:nth-child(10n+10) .card__content {
   background-image: linear-gradient(to top, #ec458d, #474ed7);
 }
+@media (min-width: 768px) {
+  .card {
+    width: min(70%, 212px);
+  }
+}
 /*********************************
             CAROUSEL
 *********************************/
@@ -219,21 +224,24 @@ body {
   background-color: #e3e3e3;
 }
 .section-promotion .collection-container .grid-auto .box-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
   padding: 20px;
-  flex-grow: 1;
 }
-.section-promotion .collection-container .grid-auto .box-content h3 {
-  font-size: 25px;
+.section-promotion .collection-container .grid-auto .box-content h4 {
+  font-size: 22px;
 }
 .section-promotion .collection-container .grid-auto .box-content button {
   display: inline-block;
-  padding: clamp(15px, 3vh, 13vw);
+  padding: clamp(10px, 2vh, 13vw);
   background-color: black;
   border: 2px solid black;
   color: white;
   outline: 0;
-  font-size: 15px;
   font-weight: 600;
   margin-top: 30px;
   cursor: pointer;
@@ -245,7 +253,7 @@ body {
 }
 .section-promotion .collection-container .grid-auto img {
   height: 100%;
-  width: max(100px, 20%);
+  width: max(112px, 15%);
   margin: 0 20px;
   -o-object-fit: contain;
      object-fit: contain;
@@ -256,44 +264,17 @@ body {
     grid-template-rows: repeat(3, 11rem);
   }
   .section-promotion .collection-container .grid-auto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #e3e3e3;
+    flex-direction: row;
   }
   .section-promotion .collection-container .grid-auto .box-content {
-    width: 100%;
-    padding: 20px;
-    flex-grow: 1;
+    align-items: flex-start;
   }
-  .section-promotion .collection-container .grid-auto .box-content h3 {
-    font-size: 25px;
+  .section-promotion .collection-container .grid-auto .box-content h4 {
+    font-size: clamp(14px, 5vw, 25px);
+    text-align: center;
   }
   .section-promotion .collection-container .grid-auto .box-content button {
-    display: inline-block;
     padding: clamp(15px, 3vh, 13vw);
-    background-color: black;
-    border: 2px solid black;
-    color: white;
-    outline: 0;
-    font-size: 15px;
-    font-weight: 600;
-    margin-top: 30px;
-    cursor: pointer;
-    transition: all 0.7s ease-in-out;
-  }
-  .section-promotion .collection-container .grid-auto .box-content button:hover {
-    background-color: #fff;
-    color: black;
-  }
-  .section-promotion .collection-container .grid-auto img {
-    height: 100%;
-    width: max(100px, 20%);
-    align-self: center;
-    margin: 0 10px;
-    -o-object-fit: contain;
-       object-fit: contain;
   }
 }
 @media only screen and (min-width: 460px) and (min-width: 1200px) {
@@ -303,11 +284,16 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     grid-template-rows: auto;
   }
-  .section-promotion .collection-container .grid-auto .box-content h3 {
-    font-size: 21px;
+  .section-promotion .collection-container .grid-auto .box-content {
+    align-items: center;
+  }
+  .section-promotion .collection-container .grid-auto .box-content h4 {
+    font-size: 22px;
   }
   .section-promotion .collection-container .grid-auto .box-content button {
     font-size: 14px;
+    padding: 15px;
+    width: max(180px, 80%);
   }
 }
 .section-carrito {
@@ -316,15 +302,15 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  overflow-y: auto;
+  overflow: auto;
   display: none;
   position: absolute;
   background-color: #f1f2f3;
   z-index: 1;
-  top: 100px;
-  left: 811px;
+  width: 50%;
+  top: 50px;
   right: 0px;
-  bottom: 0px;
+  width: 40vw;
 }
 .section-carrito--visible {
   display: block;
@@ -333,32 +319,84 @@ body {
   width: 95%;
   margin: 10px auto;
 }
-.section-carrito .carrito-body {
+.section-carrito .carrito-container h3 {
+  margin: 10px 10px;
+}
+.section-carrito .carrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border: 1px solid black;
   border-collapse: collapse;
   padding: 5px;
 }
+.section-carrito .carrito .carrito__photo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-carrito .carrito .carrito-photo {
+  max-height: 200px;
+  width: max(200px, 40%);
+}
+.section-carrito .carrito .carrito__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.section-carrito .carrito__container-button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
 .section-carrito .carrito-container button {
-  margin-top: 10px;
-  margin-left: 10px;
-  width: 100px;
+  display: inline-block;
+  margin: 5px;
+  width: 50%;
   height: 35px;
   font-size: 1.1em;
   font-weight: bold;
-  margin-bottom: 15px;
 }
 .section-carrito .carrito-footer {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3em;
 }
-.section-carrito button .btn-comprar {
-  float: right;
-  margin: 15px;
-  width: 100px;
+.section-carrito .carrito-footer p {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.section-carrito .carrito-footer .total {
+  width: 100%;
+}
+.section-carrito .carrito-footer button {
+  width: 40%;
   height: 35px;
-  font-size: 1.1em;
+  font-size: 0.8em;
   font-weight: bold;
 }
 
+@media only screen and (min-width: 460px) {
+  .section-carrito {
+    width: min(200px, 80%);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .section-carrito {
+    top: 100px;
+    right: 0px;
+    width: 300px;
+  }
+}
 /*********************************
             HEADER
 *********************************/
@@ -574,7 +612,7 @@ body {
 .big-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   grid-template-areas: "header header header header" "main main main main" "footer footer footer footer";
 }
 .big-container header {
@@ -875,7 +913,8 @@ body {
 }
 .section-cards .cards-container {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
 }
@@ -890,7 +929,7 @@ body {
     border-radius: 5px;
     margin: 0;
     padding: 10px;
-    justify-content: space-evenly;
+    flex-wrap: nowrap;
   }
 }
 @media (min-width: 768px) and (min-width: 1024px) {

@@ -62,7 +62,16 @@
     </header>
 
       <!-- --------- VISTA DEL CARRITO ----------- -->
-      <div class="section-carrito"></div>
+      <div class="section-carrito">
+
+        <div class="carrito-body"></div>
+        <div class="carrito-footer">
+          <p> Total Compra: <span class="total">$0</span></p>
+            <button class="btn-vaciarCarrito" onclick="carritoController.vaciarCarrito()" >VACIAR CARRITO</button> 
+            <!-- " -->
+            <button class="btn-comprar" onclick="carritoController.enviarCarrito()">COMPRAR</button>
+          </div>
+      </div>
       <!-- --------------------------------------- -->
   
     <main> </main>
