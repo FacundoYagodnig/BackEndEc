@@ -1,45 +1,10 @@
-/*HEADER*/
-/*SECTION-CAROUSEL*/
-.section-carousel {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-
-  @media (min-width: 768px) {
-    & {
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      height: 350px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    & {
-      height: 400px;
-      width: 80%;
-      margin: 0 auto;
-      padding: 0;
-      gap: 15px;
-
-     
-    }
-  }
-
-  @media (min-width: 1250px) {
-    & {
-      
-    }
-  }
-}
-/*MAIN*/
 /*SECTION-CARDS*/
 .section-cards {
   color: white;
   width: 100%;
   margin: 40px auto;
   border: 2px solid #f3f4f8;
+  background-color: #eeeeee;
 
   h1,
   p {
@@ -73,7 +38,6 @@
         border-radius: 5px;
         margin: 0;
         padding: 10px;
-        flex-wrap: nowrap;
       }
     }
 

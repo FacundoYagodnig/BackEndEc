@@ -8,11 +8,11 @@
     validationArray = [false, false, false, false, false, false];
       
     regExpArray = [
-      /^(([A-Z][a-z]{3,20})|([A-Z][a-z]{3,20} [A-Z][a-z]{3,20}))$/,     //nombre
+      /^(([A-Z][a-z]{2,20}( [\d]{0,3}){0,3})){0,3}$/,     //nombre
       /^[\d]+$/,              //precio
       /^[\d]+$/,              //stock
       /^.+$/,                   //foto
-      /^([a-z]|[A-Z]){3,150}$/, //detalles
+      /^.+$/, //detalles
     ];
 
     constructor(renderTablaAlta, saveProduct ){

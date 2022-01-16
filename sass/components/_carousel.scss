@@ -1,45 +1,55 @@
 /*********************************
             CAROUSEL
 *********************************/
-.carousel {
-  width: 100%;
-  height: 100%;
-  order: 1;
+.hero{
+  
 
-  .carousel-img {
+  .carousel {
     width: 100%;
-    position: relative;
-    height: max(200px, 100%);
+    height: 100%;
+    order: 1;
 
-    &__img {
+    .carousel-img {
       width: 100%;
+      position: relative;
       height: 100%;
-    }
 
-    &__prev {
-      display: block;
-      position: absolute;
-      left: 5%;
-      top: calc(50% - 40px);
-      color: white;
-      cursor: pointer;
-    }
-    &__next {
-      display: block;
-      position: absolute;
-      right: 5%;
-      top: calc(50% - 40px);
-      color: white;
-      cursor: pointer;
+      &__img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &__prev {
+        display: block;
+        position: absolute;
+        left: 5%;
+        top: calc(50% - 40px);
+        color: white;
+        cursor: pointer;
+      }
+      &__next {
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: calc(50% - 40px);
+        color: white;
+        cursor: pointer;
+      }
     }
   }
 }
-
 @media (min-width: 768px) {
   .carousel {
     height: 100%;
     width: 100%;
     margin: 0;
+  }
+}
+
+
+@media (min-width: 1440px) {
+  .hero{
+    height: min(700px, 100%);
   }
 }
 
