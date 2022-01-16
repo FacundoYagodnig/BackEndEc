@@ -29,19 +29,7 @@
 
   @media (min-width: 1250px) {
     & {
-      .desplegable {
-        margin: 0;
-
-        &__title {
-          padding-top: 10px;
-        }
-
-        .desplegable-list {
-          &__category-item {
-            font-size: var(--link-fonts-xl);
-          }
-        }
-      }
+      
     }
   }
 }

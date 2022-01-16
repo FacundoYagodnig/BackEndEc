@@ -3,7 +3,7 @@
 
   .collection-container {
     display: grid;
-    grid-template-rows: repeat(3, 17rem);
+    grid-template-rows: repeat(3, 12rem);
     grid-template-columns: auto;
     gap: 1em;
     margin: 0 15px;
@@ -15,6 +15,7 @@
       justify-content: center;
       align-items: center;
       background-color: #e3e3e3;
+      padding: 10px;
 
       .box-content {
         display: flex;
@@ -23,18 +24,14 @@
         flex-direction: column;
         flex-wrap: wrap;
         width: 100%;
-        padding: 20px;
-
-        h4 {
-          font-size: 22px;
-        }
+        padding: clamp(1rem, 0.45rem + 1.2vw, 2rem);
 
         button {
           display: inline-block;
           padding: clamp(10px, 2vh, 13vw);
           background-color: black;
           border: 2px solid black;
-          color: white;
+          color: #fff;
           outline: 0;
           font-weight: 600;
           margin-top: 30px;
@@ -50,7 +47,7 @@
 
       img {
         height: 100%;
-        width: max(112px, 15%);
+        width: max(77px, 17%);
         margin: 0 20px;
         object-fit: contain;
       }
@@ -58,10 +55,10 @@
   }
 }
 
-@media only screen and (min-width: 460px) {
+@media only screen and (min-width: 440px) {
     .section-promotion {
         .collection-container {
-          grid-template-rows: repeat(3, 11rem);
+          grid-template-rows: repeat(3, 10rem);
 
           .grid-auto {
             flex-direction: row;
@@ -70,12 +67,11 @@
               align-items: flex-start;
       
               h4 {
-                font-size: clamp(14px, 5vw, 25px);
                 text-align: center;
               }
       
               button {
-                padding: clamp(15px, 3vh, 13vw);
+                padding: clamp(12px, 1.5vw, 1rem);
               }
             }
   
@@ -83,27 +79,33 @@
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1340px) {
     .section-promotion {
         .collection-container {
             display: grid;
             gap: 1em;
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
             grid-template-rows: auto;
 
             .grid-auto {
                 .box-content {
-                    align-items: center;
+                    align-items: flex-start;
 
                     h4{
-                      font-size: 22px;
+                      font-size: calc(0.35rem + 1.2vw);
+                      max-inline-size: 16ch;
                     }
 
                     button {
-                        font-size: 14px;
                         padding: 15px;
-                        width: max(180px, 80% );
+                        width: max(180px, 60% );
                     }
+
+                   
+                }
+
+                img{
+                  width: max(77px, 25%);
                 }
             }
         }

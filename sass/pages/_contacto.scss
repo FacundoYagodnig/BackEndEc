@@ -26,12 +26,10 @@
     }
 
     ::placeholder {
-      font-size: 16px;
       padding-left: 5px;
     }
     .contact-label {
       display: block;
-      font-size: var(--title-label);
       font-weight: var(--bold-font);
       padding: 10px;
     }
@@ -49,7 +47,6 @@
 
   #submit-btn {
     width: min(40%, 200px);
-    font-size: 1em;
     font-weight: var(--bold-font);
   }
 }

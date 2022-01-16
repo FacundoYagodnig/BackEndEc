@@ -39,14 +39,13 @@
     height: 100%;
     display: flex;
     list-style-type: none;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 1em;
     align-items: center;
   }
 
   .nav-bar__nav-item {
     text-align: center;
-    width: 100%;
     margin: 5px;
   }
 
@@ -84,23 +83,22 @@
     .search-bar__logo-container {
       width: 100%;
       color: #fff;
-      font-size: var(
-        --title-fonts
-      ); // clamp, es una funcion que tambien ahorra mucho codigo @media : clamp(valor minimo, valor por defecto , y valor maximo)
       align-self: center;
     }
   }
 
   .search-bar__form-container {
-    padding: 1em;
     color: white;
-    width: 100%;
+    width: 100%;  
     display: none;
+    align-items: center;
     justify-content: center;
     position: relative;
 
-    #busqueda {
-      width: 60%;
+    input{
+      display: inline-block;
+      font-size: 12px;
+      transition: .5s;
     }
   }
 
@@ -108,47 +106,70 @@
     display: block;
     position: absolute;
     color: #333;
-    left: 20%;
+    left: 30%;
   }
 
   .search-bar__form-search {
-    width: 30%;
-    height: 100%;
-    max-height: 28px;
+    width: min(80%, 30vw);
+    height: 20px;
+    outline: none;
     margin: 2px;
-    padding: 2px;
+    padding: 0 25px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+  }
+
+  .search-bar__form-search:focus + .search-bar__form-label  {
+    display: none;
   }
 
   .search-bar__form-submit {
-    height: 100%;
+    width: 15%;
+    height: 20px;
     text-align: center;
-    padding: 4px;
     position: relative;
-    right: 6%;
-
+    right: 20px;
     border: none;
+    border-radius: 0 25px 25px 0;
+    outline: none;
+    cursor: pointer;
+    background: #ffe107;
+
+    &:hover {
+      background-color: white;
+    }
   }
 
   .search-bar__carrito-container {
     display: flex;
-    width: 45px;
     height: 50px;
     justify-content: center;
     align-items: center;
-    font-size: var(--link-fonts-icons);
-    background-color: white;
-    border: 1px solid #333;
+    background-color: #f8f4f4;
     cursor: pointer;
-    flex: 0 0 2em;
+    flex: 0 0 3em;
+    position: relative;
+    text-align: center;
 
     .search-bar__carrito-link {
       color: #333;
     }
+
+    .fas {
+      font-size: 1.8rem;
+      margin-top: 6px;
+    }
     
     .badge-cart {
-      width: 30%;
-      background-color: pink;
-      
+      width: 20px;
+      height: 20px;
+      background-color: rgb(233, 18, 54);
+      position: absolute;
+      top: 0;
+      right: -2px;
+      border-radius: 100%;
+      z-index: 2;
+      font-size: 12px;
     }
   }
 }
@@ -162,7 +183,7 @@
   width: 45px;
   background-color: red;
   border: 2px solid black;
-  flex: 0 0 3em;
+  flex: 0 0 2.8em;
   position: relative;
   cursor: pointer;
 
@@ -201,14 +222,17 @@
   .main-header {
     .nav-bar {
       display: none;
-
-      .nav-bar__nav-list {
-      }
     }
 
     .search-bar {
       max-height: 73px;
+
+      .search-bar__form-container  {
+        display: flex;
+      }
     }
+
+   
   }
 }
 
@@ -239,5 +263,15 @@
         border: 0;
       }
     }
+
+    .search-bar__container {
+      width: 30%;
+    }
+
+    .search-bar__form-container {
+      width: 50%;
+      display: flex;
+    }
+
   }
 }
