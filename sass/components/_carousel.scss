@@ -2,7 +2,7 @@
             CAROUSEL
 *********************************/
 .hero{
-  margin-top: 49px;
+ margin-top: 20px;
 
   .carousel {
     width: 100%;
@@ -41,7 +41,7 @@
 @media (min-width: 1024px) {
 
   .hero{
-   margin: 0;
+  
     .carousel {
       height: 100%;
       width: 100%;
@@ -50,11 +50,5 @@
   }
 }
 
-
-@media (min-width: 1440px) {
-  .hero{
-    margin: 0;
-  }
-}
 
 

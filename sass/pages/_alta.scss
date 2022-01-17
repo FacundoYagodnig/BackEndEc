@@ -1,16 +1,11 @@
-.body-alta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 h1 {
   text-align: center;
+  margin-top: 30px;
 }
 
 .alta-container{
   width: 80%;
+  margin: 0 auto;
 
   .alta-container__form {
     height: 100%;
