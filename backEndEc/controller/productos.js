@@ -1,41 +1,42 @@
-const service = require("../service/productos.js")
+import service from "../service/productos.js"
 
 /* ------------------------- CRUD ----------------------------- */
-const saveProducts = (req,res) => {
-    let producto = req.body
-    let productoGuardado = service.saveProduct(producto)
-    res.json(productoGuardado)
-}
-
-const getProducts = (req,res) => {
+const getProducts = async (req,res) => {
     let id = req.params.id //requiero el parametro que pase en la url y lo guardo como id
+    
     if(id){
-        let producto = service.getOneProduct(id)
+        let producto = await service.getOneProduct(id)
         res.json(producto)
     }
     else { 
-        let productos = service.getAllProducts()
+        let productos = await service.getAllProducts()
         res.json(productos)
     }
 }
 
-const updateProducts = (req,res) => {
+const saveProducts = async (req,res) => {
+    let producto = req.body
+    let productoGuardado = await service.saveProduct(producto)
+    res.json(productoGuardado)
+}
+
+const updateProducts = async (req,res) => {
     let id = req.params.id
     let producto = req.body //me trae la info del body, osea todos los datos que mande en el put, como yo no mando id en el put si no lo creo primero no va a tener id!
     
-    let productoActualizado = service.updateProducts(id,producto)
+    let productoActualizado = await service.updateProducts(id,producto)
    //me quita un producto en el indice y luego agrego el actualizado
     res.json(productoActualizado)
 }
 
-const deleteProducts = (req,res) => {
+const deleteProducts = async (req,res) => {
     let id = req.params.id 
-    let productoEliminado = service.deleteProducts(id)
+    let productoEliminado = await service.deleteProducts(id)
     res.json(productoEliminado)
 }
 /* ------------------------- CRUD ----------------------------- */
 
-module.exports = {
+export default {
     saveProducts,
     getProducts,
     updateProducts,

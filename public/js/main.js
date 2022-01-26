@@ -47,9 +47,6 @@ initJS(id){
 
   }
     
-  
-
-
  async getPlantillas(){
   /* Carga inicial de la plantilla, segun la url visitada */
   let id = location.hash.slice(1) || 'inicio'; //si no esta definido, sale inicio

@@ -1,5 +1,5 @@
-const express = require('express') 
-const controller = require('../controller/productos.js')
+import express from 'express'
+import controller from '../controller/productos.js'
 const router = express.Router()
 
 /* ------------------------- CRUD ----------------------------- */
@@ -9,4 +9,4 @@ router.put('/:id', controller.updateProducts)
 router.delete('/:id', controller.deleteProducts)
 /* ------------------------- CRUD ----------------------------- */
 
-module.exports = router
+export default router

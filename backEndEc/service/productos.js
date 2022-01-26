@@ -1,32 +1,35 @@
-const models = require("../models/productos.js")
+// import models from "../models/productosMem.js"
+import models from "../models/productosFile.js"
 
 /* ------------------------- CRUD ----------------------------- */
-const saveProduct = producto => {
-    let productoGuardado = models.createProduct(producto)
-    return productoGuardado
+
+const getAllProducts = async () => {
+    let productos = await models.readProducts()
+    return productos
 }
 
-const getOneProduct = id => { 
-    let producto = models.readProduct(id) 
+const getOneProduct = async id => { 
+    let producto = await models.readProduct(id) 
     return producto
 }
 
-const getAllProducts = () => {
-    return models.readProducts()
+const saveProduct = async producto => {
+    let productoGuardado = await models.createProduct(producto)
+    return productoGuardado
 }
 
-const updateProducts = (id,producto) => {
-    let productoActualizado = models.updateProduct(id,producto)
+const updateProducts = async (id,producto) => {
+    let productoActualizado = await models.updateProduct(id,producto)
     return productoActualizado
 }
 
-const deleteProducts = id => {
-   let productoEliminado = models.deleteProduct(id)
+const deleteProducts = async id => {
+   let productoEliminado = await models.deleteProduct(id)
    return productoEliminado
 }
 /* ------------------------- CRUD ----------------------------- */
 
-module.exports = {
+export default  {
     saveProduct,
     getOneProduct,
     getAllProducts,
