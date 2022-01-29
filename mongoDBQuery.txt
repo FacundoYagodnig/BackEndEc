@@ -1,0 +1,66 @@
+
+
+C:\cmder_mini
+λ mongo
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("738e9036-15d4-43dc-96f9-587eddc9418b") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-01-26T23:03:56.700-03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+        2022-01-26T23:03:56.702-03:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> dbs
+uncaught exception: ReferenceError: dbs is not defined :
+@(shell):1:1
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use ecommerce
+switched to db ecommerce
+> db.productos
+ecommerce.productos
+> show collections
+> db.productos.find()
+> db.productos.insert( {nombre : ‘tv33’, description : ‘TV33LCD’ , precio : ‘2222’ })
+uncaught exception: SyntaxError: illegal character :
+@(shell):1:31
+> db.productos.insert({nombre : ‘tv33’, description : ‘TV33LCD’ , precio : ‘2222’ })
+uncaught exception: SyntaxError: illegal character :
+@(shell):1:30
+> db.productos.insert({nombre :‘tv33’, description :‘TV33LCD’ , precio :‘2222’ })
+uncaught exception: SyntaxError: illegal character :
+@(shell):1:29
+> db.productos.insert({nombre: 'TV33', descripcion: 'SmartTV33', precio: '3333'})
+WriteResult({ "nInserted" : 1 })
+> db.productos.insert({nombre: 'TV43', descripcion: 'SmartTV43', precio: '4333'})
+WriteResult({ "nInserted" : 1 })
+> db.productos.find()
+{ "_id" : ObjectId("61f1ff8ce3fa315586e04317"), "nombre" : "TV33", "descripcion" : "SmartTV33", "precio" : "3333" }
+{ "_id" : ObjectId("61f1ff98e3fa315586e04318"), "nombre" : "TV43", "descripcion" : "SmartTV43", "precio" : "4333" }
+> show dbs
+admin      0.000GB
+config     0.000GB
+ecommerce  0.000GB
+local      0.000GB
+>
