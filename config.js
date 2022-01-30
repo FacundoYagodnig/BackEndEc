@@ -4,4 +4,3 @@ export default {
     STR_CNX : 'mongodb+srv://fyagodnig:8JMzb3rudic6rvg@cluster0.nwfrl.mongodb.net/ecommerce-first-database?retryWrites=true&w=majority'
 }
 
-//8JMzb3rudic6rvg
