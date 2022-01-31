@@ -14,13 +14,13 @@ async function renderCarrito(carrito){
 
 function addProduct(e,id) {
     e.preventDefault()
-    let producto = productoController.productsList.find( producto => producto._id == id )
+    let producto = productoController.productsList.find( producto => producto.id == id )
     carritoController.addToCart(producto)  
   }
   
 function removeProduct(e,id) {
   e.preventDefault()
-  let producto = productoController.productsList.find( producto => producto._id == id )
+  let producto = productoController.productsList.find( producto => producto.id == id )
   carritoController.removeToCart(producto,id)  
 }
 

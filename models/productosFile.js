@@ -13,7 +13,7 @@ class ProductoModelFile {
         }
     }
 
-    guardarArchivoProducto = async productos => {
+    guardarArchivoProducto = async (productos) => {
         await fs.promises.writeFile(this.nombreArchivo, JSON.stringify(productos,null,'\t'))
     }
 
@@ -29,7 +29,7 @@ class ProductoModelFile {
         producto.id =  this.getId(productos)  //modificamos
         productos.push(producto)
 
-        await guardarArchivoProducto(productos)//guardamos
+        await this.guardarArchivoProducto(productos)//guardamos
         return producto
     }
     /* R => Read All */
@@ -52,7 +52,7 @@ class ProductoModelFile {
         let index = productos.findIndex(producto => producto.id == id)
         productos.splice(index,1,producto)
 
-        await guardarArchivoProducto(productos)
+        await this.guardarArchivoProducto(productos)
         return producto
     }
     /* D => Delete */
@@ -62,7 +62,7 @@ class ProductoModelFile {
         let index = productos.findIndex(producto => producto.id == id)
         let producto = productos.splice(index,1)[0] 
 
-        await guardarArchivoProducto(productos)
+        await this.guardarArchivoProducto(productos)
         return producto
     }
 }

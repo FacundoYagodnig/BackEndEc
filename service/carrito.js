@@ -2,7 +2,7 @@ import config from '../config.js'
 
 import CarritoModel from "../models/carrito-factory.js"
 
-const models = CarritoModel.get(config.TIPO_DE_PERSISTENCIA)
+const models = CarritoModel.get(config.TIPO_DE_PERSISTENCIA_CARRITO)
 
 /* ------------------------- CRUD ----------------------------- */
 

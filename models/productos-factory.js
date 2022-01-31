@@ -13,7 +13,6 @@ class ProductoModel {
                 return new ProductoModelFile
             case 'MONGODB':
                 console.log('**** PERSISTENCIA EN MONGODB (productos) ****')
-                ProductoModelMongoDB.conectarDB()
                 return new ProductoModelMongoDB()
             case 'DEFAULT':
                 console.log('**** PERSISTENCIA DEFAULT (productos) ****')

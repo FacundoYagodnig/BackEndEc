@@ -6,7 +6,7 @@ import config from '../config.js'
 
 import ProductoModel from "../models/productos-factory.js"
 
-const models = ProductoModel.get(config.TIPO_DE_PERSISTENCIA)
+const models = ProductoModel.get(config.TIPO_DE_PERSISTENCIA_PRODUCTOS)
 
 /* ------------------------- CRUD ----------------------------- */
 

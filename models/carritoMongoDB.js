@@ -1,5 +1,5 @@
 import mongoose  from "mongoose"
-import ProductoModelMongoDB from "./productosMongoDB.js"
+import DB_Mongo from './DB_Mongo.js'
 
 /* ------------------------- Esquema del ODM -------------------------------------------------------- */
 const carritoSchema = mongoose.Schema({
@@ -10,14 +10,12 @@ const carritoSchema = mongoose.Schema({
 /* ------------------------- Modelo del doc almacenado en una coleccion ----------------------------- */
 const CarritoModel = mongoose.model('carritos', carritoSchema) //crea la collection
 /* ------------------------- Modelo del doc almacenado en una coleccion ----------------------------- */
-
 class CarritoModelMongoDB {
-    
     
     /* ------------------------------------------ CRUD -------------------------------------------------- */
     /* C => Create */
-    createCarrito = async carrito => {
-        if(!ProductoModelMongoDB.connectionOk) return {}
+    createCarrito = async (carrito) => {
+        if(!DB_Mongo.connectionOk) return {}
 
         try{
             const saveCarrito = new CarritoModel({carrito: carrito}) //esto es para los que entraron por el back
@@ -25,7 +23,7 @@ class CarritoModelMongoDB {
             return carrito
         }
         catch(error){
-            console.log(`Eror en el createCarrito: ${error.message}`)
+            console.log(`Error en el createCarrito: ${error.message}`)
             return {}
         }
     }
