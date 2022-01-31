@@ -12,7 +12,7 @@ class CarritoModel {
             case 'MONGODB':
                 console.log('**** PERSISTENCIA EN MONGODB (carrito) ****')
                 return new CarritoModelMongoDB()
-            case 'DEFAULT':
+            default :
                 console.log('**** PERSISTENCIA DEFAULT (carrito) ****')
                 return new CarritoModelMongoDB()
                 
