@@ -137,6 +137,7 @@ class CarritoController extends CarritoModel {
         await carritoService.saveCarritoService(this.carrito)
         this.carrito = []
         localStorage.setItem('carrito',this.carrito)
+        this.carritoDelay()
         this.sectionCarrito__body.innerHTML = '<h2>Productos Comprados con exito!</h2>'
     }
 }
