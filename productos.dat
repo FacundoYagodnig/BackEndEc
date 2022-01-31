@@ -1,15 +1,13 @@
 [
 	{
 		"name": "Consola Plastation 5 ",
-		"price": "333333",
-		"stock": "4",
-		"brand": "Sony",
-		"category": "Consola",
+		"price": "222222",
+		"stock": "12",
 		"photo": "sony-playstation-5",
-		"details": "Consola PlayStation 5 con lectora",
-		"send": false,
+		"details": "Consola PlayStation 5 ",
+		"send": true,
 		"cantidad": 0,
 		"total": 0,
-		"id": 1
+		"id": "1"
 	}
 ]

@@ -42,7 +42,7 @@ class ProductosController extends ProductModel{
         console.log('borrarProducto', id)
         let deletedProduct = await productosService.deleteProductsService(id)
 
-        let index = this.productsList.findIndex(product => product.id == id)
+        let index = this.productsList.findIndex(product => product.id == deletedProduct.id)
         this.productsList.splice(index,1)
 
         renderTablaAlta(null, this.productsList)
