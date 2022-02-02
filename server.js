@@ -1,6 +1,7 @@
 import express from 'express'
 import routerProductos from './router/productos.js'
 import routerCarrito from './router/carrito.js'
+import routerUpload from './router/upload.js'
 import config from './config.js'
 
 import DB_Mongo from './models/DB_Mongo.js'
@@ -16,6 +17,7 @@ app.use(express.json())
 
 app.use('/api/productos', routerProductos)
 app.use('/api/carrito', routerCarrito)
+app.use('/upload', routerUpload)
 
 
 const PORT = process.env.PORT || config.PORT

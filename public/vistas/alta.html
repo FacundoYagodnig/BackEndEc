@@ -6,21 +6,21 @@
 
       <div class="input-container">
         <label class="alta-label" for="name">Name:</label>
-        <input id="name" type="text" name="name" autofocus  minlength="3" maxlength="40" value=""
+        <input id="name" class="data-validation" type="text" name="name" autofocus  minlength="3" maxlength="40" value=""
           placeholder="Product name">
         <div class="validator-cartel" id="validator-cartel"></div>
       </div>
       
       <div class="input-container">
         <label class="alta-label" for="price">Price:</label>
-        <input id="price" type="text" name="price" autofocus  min="0" step=".5" value="">
+        <input id="price" class="data-validation" type="text" name="price" autofocus  min="0" step=".5" value="">
         <div class="validator-cartel" id="validator-cartel"></div>
       </div>
    
 
       <div class="input-container">
         <label class="alta-label" for="stock">Stock:</label>
-        <input id="stock" type="text" name="stock" autofocus  max="1000" value="">
+        <input id="stock" class="data-validation" type="text" name="stock" autofocus  max="1000" value="">
         <div class="validator-cartel" id="validator-cartel"></div>
       </div>
    
@@ -61,28 +61,38 @@
           </optgroup>
         </select>
       </div>
-
+<!-- 
       <div class="input-container">
         <label class="alta-label" for="foto">Foto:</label>
         <input type="text" id="foto" name="foto">
         <div class="validator-cartel" id="validator-cartel"></div>
-      </div>
+      </div> -->
        
-
       <div class="input-container">
         <label class="alta-label" for="details">Details:</label>
         <br>
-        <input type="text" id="details" name="details"></input>
+        <input type="text" class="data-validation" id="details" name="details"></input>
         <div class="validator-cartel" id="validator-cartel"></div>  
       </div>
 
+      <div id="drop-area">
+        <p>Subir imagen al servidor con <b>file dialog</b> ó con <b>drag and drop</b> dentro del área punteada</p>
+        <br>
+        <input type="file" name="foto" id="foto" accept="image/*" onchange="formularioAlta.handleFiles(this.files)">
+        <label class="button" for="foto">File dialog</label>
+        <br>
+
+        <progress id="progress-bar" max="100" value="0"></progress>
+        <div id="gallery"><img width="100" src="" alt=""></div>
+      </div>
+
       <div class="free-shipping">
-        <input type="checkbox" id="free-shipping" name="free-shipping" value="si">
+        <input type="checkbox" class="data-validation" id="free-shipping" name="free-shipping" value="si">
         <label class="alta-label" for="free-shipping">Free-shipping</label>
       </div>
 
       <div class="alta-submit">
-        <button id="submit-btn" type="submit" value="Send data"></button>
+        <button id="submit-btn" type="submit" value="Send data">Enviar</button>
       </div>
     </form>
 
