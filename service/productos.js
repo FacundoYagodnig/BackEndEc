@@ -23,13 +23,14 @@ const getOneProduct = async id => {
 
 const saveProduct = async producto => {
     const errorValidation = ProductoValidation.validar(producto)
+
     if(!errorValidation) {
-    let productoGuardado = await models.createProduct(producto)
-    return productoGuardado
+        let productoGuardado = await models.createProduct(producto)
+        return productoGuardado
+    }  else {
+        throw new Error('Error en saveProduct', errorValidation.details[0].message)
     }
-    else {
-        console.log('Error en saveProduct', errorValidation.details[0].message)
-    }
+    
 }
 
 const updateProducts = async (id,producto) => {
@@ -39,7 +40,7 @@ const updateProducts = async (id,producto) => {
     return productoActualizado
     }
     else {
-        console.log('Error en updateProducts', errorValidation.details[0].message)
+        throw new Error('Error en updateProducts', errorValidation.details[0].message)
     }
 }
 
