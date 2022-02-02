@@ -43,7 +43,7 @@ class ProductoModelMongoDB {
     }
     /* R => Read All */
     readProducts = async () => {
-        if(!DB_mongo.connectionOk) return []
+        if(!DB_Mongo.connectionOk) return []
         try{
             let productos = await ProductoModel.find({}).lean() //busca todos
             return DB_Mongo.genIdKey(productos)
@@ -55,7 +55,7 @@ class ProductoModelMongoDB {
     }
     /* R => Read One*/
     readProduct = async id => {
-        if(!DB_mongo.connectionOk) return {}
+        if(!DB_Mongo.connectionOk) return {}
 
         try{
             let producto = await ProductoModel.findOne({_id:id}).lean() //busca 1 por id
@@ -69,7 +69,7 @@ class ProductoModelMongoDB {
     }
     /* U => Update */
     updateProduct = async (id,producto) => {
-        if(!DB_mongo.connectionOk) return {}
+        if(!DB_Mongo.connectionOk) return {}
         
         try{
             await ProductoModel.updateOne({_id:id}, {$set: producto}) //actualiza 1 por id, mediante el set le pasamos el producto
@@ -85,7 +85,7 @@ class ProductoModelMongoDB {
     }
     /* D => Delete */
     deleteProduct = async id => {
-        if(!DB_mongo.connectionOk) return {}
+        if(!DB_Mongo.connectionOk) return {}
         try{
             let deletedProduct = await ProductoModel.findOne({_id:id}).lean() 
             await ProductoModel.deleteOne({_id:id})
