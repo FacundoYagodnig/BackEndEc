@@ -13,7 +13,7 @@ class ProductoModelFile {
         }
     }
 
-    guardarArchivoProducto = async productos => {
+    guardarArchivoProducto = async (productos) => {
         await fs.promises.writeFile(this.nombreArchivo, JSON.stringify(productos,null,'\t'))
     }
 

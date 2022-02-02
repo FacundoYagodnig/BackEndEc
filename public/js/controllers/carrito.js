@@ -14,12 +14,12 @@ class CarritoController extends CarritoModel {
     }
 
     elProductoEstaEnElCarrito(producto) {
-        return this.carrito.filter(prod => prod._id == producto._id).length
+        return this.carrito.filter(prod => prod.id == producto.id).length
         //si esta productos.id == prod.id me devuelve el ancho del carrito, si no me devuelve 0
     }
 
     obtenerProductoDeCarrito(producto) {
-        return this.carrito.find(prod => prod._id == producto._id) 
+        return this.carrito.find(prod => prod.id == producto.id) 
         //lo importante de esta funcion es que me busca el producto ya pusheado en el carrito y no de productList
         //me devuelve el objeto que prod.id == producto.id 
     }
@@ -90,7 +90,7 @@ class CarritoController extends CarritoModel {
     productoCarrito.cantidad--
     
     if(productoCarrito.cantidad === 0){
-        let index = this.carrito.findIndex(producto => producto._id == id)  //como el indice empieza en 0, hacemos que empieze en 1 con findIndex e igualandolo al id del producto
+        let index = this.carrito.findIndex(producto => producto.id == id)  //como el indice empieza en 0, hacemos que empieze en 1 con findIndex e igualandolo al id del producto
         this.carrito.splice(index,1)                                       //luego lo borramos con splice pasandole el index(desde 1 en adelante) y quitamos 1
         console.log(this.carrito)
 
@@ -135,9 +135,7 @@ class CarritoController extends CarritoModel {
     async enviarCarrito() {
         this.sectionCarrito__body.innerHTML = '<h2>Enviando productos...</h2>'
         await carritoService.saveCarritoService(this.carrito)
-        this.carrito = []
-        localStorage.setItem('carrito',this.carrito)
-        this.carritoDelay()
+        this.vaciarCarrito()
         this.sectionCarrito__body.innerHTML = '<h2>Productos Comprados con exito!</h2>'
     }
 }

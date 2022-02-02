@@ -1,15 +1,41 @@
 [
 	{
-		"name": "Consola Plastation 5 ",
+		"name": "Asd",
 		"price": "33",
-		"stock": "4",
-		"brand": "Sony",
+		"stock": "5",
+		"brand": "Lenovo",
 		"category": "Consola",
-		"photo": "sony-playstation-5",
-		"details": "Consola PlayStation 5 con lectora",
-		"send": false,
+		"details": "sadasda",
+		"photo": "/uploads/1643752272653-auriculares-sony.jpg",
+		"send": true,
 		"cantidad": 0,
 		"total": 0,
-		"id": 1
+		"id": "111"
+	},
+	{
+		"name": "Consola Plastation 5 ",
+		"price": "33",
+		"stock": "3",
+		"brand": "Lenovo",
+		"category": "Juego",
+		"details": "asdsa",
+		"photo": "/uploads/1643752292250-parlante-jbl.jpg",
+		"send": true,
+		"cantidad": 0,
+		"total": 0,
+		"id": "1111"
+	},
+	{
+		"name": "Consola Plastation 5 ",
+		"price": "3",
+		"stock": "4",
+		"brand": "Motorola",
+		"category": "Consola",
+		"details": "Consola PlayStation 5 con lectora",
+		"photo": "/uploads/1643816337515-consola-ps5.jpg",
+		"send": true,
+		"cantidad": 0,
+		"total": 0,
+		"id": "11111"
 	}
 ]

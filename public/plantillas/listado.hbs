@@ -26,7 +26,7 @@
             <td>{{category}}</td>
             <td>{{details}}</td>
             <td>
-                <img src='img/productos/{{photo}}.jpg' alt={{name}}>
+                <img src='{{photo}}' alt={{name}}>
             </td>
             {{#if send}}
                 <td>Si</td>
@@ -35,11 +35,11 @@
             {{/if}}
             <td>
             {{#if ../validos}}
-                <button onclick="productoController.updateProduct('{{_id}}')">Update</button>
+                <button onclick="productoController.updateProduct('{{id}}')">Update</button>
             {{else}}
-                <button disabled onclick="productoController.updateProduct('{{_id}}')">Update</button>
+                <button disabled onclick="productoController.updateProduct('{{id}}')">Update</button>
             {{/if}}
-                <button onclick="productoController.deleteProduct('{{_id}}')">Delete</button>
+                <button onclick="productoController.deleteProduct('{{id}}')">Delete</button>
             </td>
         </tr>
         {{/each}}

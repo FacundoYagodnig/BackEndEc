@@ -967,6 +967,7 @@ h1 {
   margin: 10px auto;
   padding-bottom: 10px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
   border: 2px solid black;
@@ -1024,9 +1025,18 @@ h1 {
 }
 .alta-container .alta-container__form #submit-btn {
   margin: 20px auto;
-  width: min(40%, 200px);
+  width: 200px;
   height: 4vh;
   font-weight: var(--bold-font);
+}
+.alta-container .alta-container__form .button, .alta-container .alta-container__form button {
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border: 5px solid #ccc;
+  border-bottom: 20px;
+  margin: 15px 0;
 }
 .alta-container table, .alta-container th, .alta-container td {
   border: 1px solid black;
@@ -1037,9 +1047,29 @@ h1 {
 }
 .alta-container #product-list {
   width: 100%;
+  overflow-x: visible;
 }
 .alta-container th, .alta-container td {
   padding: 5px;
+}
+.alta-container #drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  width: 300px;
+  margin: 25px 0;
+  padding: 20px;
+}
+.alta-container #foto {
+  display: none;
+}
+.alta-container #gallery img {
+  width: 100px;
+  margin-top: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.alta-container #drop-area.highlight {
+  border-color: red;
 }
 
 .contact-form {

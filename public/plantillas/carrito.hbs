@@ -6,15 +6,15 @@
     {{#each carrito}}
         <div class="carrito">
             <div class="carrito__photo-container">
-                <img class="carrito-photo" src='img/productos/{{photo}}.jpg' >
+                <img class="carrito-photo" src='{{photo}}' >
             </div>
             <div class="carrito__info">
                 <h6>{{name}}</h6>
                 <p><strong>Precio: ${{price}}</strong></p>
                 <p><strong class="cantidad">Cantidad: {{cantidad}}</strong></p>
                 <div class="carrito__container-button"> 
-                    <button class="btn-remove" onclick="removeProduct(event,'{{_id}}')">-</button>
-                    <button class="btn-add" onclick="addProduct(event,'{{_id}}')">+</button>
+                    <button class="btn-remove" onclick="removeProduct(event,'{{id}}')">-</button>
+                    <button class="btn-add" onclick="addProduct(event,'{{id}}')">+</button>
                 </div>
             </div>
         </div>

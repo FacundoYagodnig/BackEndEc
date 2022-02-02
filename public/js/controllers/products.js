@@ -31,7 +31,7 @@ class ProductosController extends ProductModel{
         let updateProduct = await productosService.updateProductsService(id,product)
         console.log(updateProduct)
     
-        let index = this.productsList.findIndex(product => product._id == updateProduct._id)
+        let index = this.productsList.findIndex(product => product.id == updateProduct.id)
         this.productsList.splice(index,1,updateProduct)
 
         
@@ -42,7 +42,7 @@ class ProductosController extends ProductModel{
         console.log('borrarProducto', id)
         let deletedProduct = await productosService.deleteProductsService(id)
 
-        let index = this.productsList.findIndex(product => product._id == id)
+        let index = this.productsList.findIndex(product => product.id == deletedProduct.id)
         this.productsList.splice(index,1)
 
         renderTablaAlta(null, this.productsList)

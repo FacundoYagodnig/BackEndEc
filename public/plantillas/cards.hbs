@@ -5,13 +5,13 @@
         <article class="card__article">
             <div 
                 class="card__image"
-                style="background-image: url('img/productos/{{photo}}.jpg')">
+                style="background-image: url('{{photo}}')">
             </div>
 
             <div class="card__content">
             <h5 class="card__heading">{{name}}</h5>
             <div class="btn-container">
-                <button class="btn-minus" id="btn-minus" onclick="addProduct(event, '{{_id}}')"> <i class="fas fa-shopping-cart"></i></button>
+                <button class="btn-minus" id="btn-minus" onclick="addProduct(event, '{{id}}')"> <i class="fas fa-shopping-cart"></i></button>
             </div>
               <div class="card__description">
                 <p><strong>${{price}}</strong></p>

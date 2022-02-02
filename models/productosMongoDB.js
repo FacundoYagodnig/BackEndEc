@@ -1,6 +1,5 @@
-import mongoose  from "mongoose"
-import config from '../config.js'
-
+import mongoose  from 'mongoose'
+import DB_Mongo from './DB_Mongo.js'
 
 /* ------------------------- Esquema del ODM -------------------------------------------------------- */
 const productoSchema = mongoose.Schema({
@@ -22,35 +21,20 @@ const ProductoModel = mongoose.model('productos', productoSchema) //crea la coll
 /* ------------------------- Modelo del doc almacenado en una coleccion ----------------------------- */
 
 class ProductoModelMongoDB {
-    static connectionOk = false
-
-    static async conectarDB(){
-        try{
-            await mongoose.connect(config.STR_CNX, { 
-                useNewUrlParser: true,   
-                useUnifiedTopology: true
-            })
-            console.log('Base de datos conectada')
-            ProductoModelMongoDB.connectionOk = true
-        }
-        catch(error){
-            console.log(`MongoDB error al conectar: ${error.message}`)
-        }
-    }
 
     /* ------------------------------------------ CRUD -------------------------------------------------- */
     /* C => Create */
     createProduct = async producto => {
-        if(!ProductoModelMongoDB.connectionOk) return {}
+        if(!DB_Mongo.connectionOk) return {}
 
         try{
             const saveProduct = new ProductoModel(producto) //esto es para los que entraron por el back
             await saveProduct.save() //metodo que me permite guardar el producto en la base de datos
 
-            let productos = await ProductoModel.find({})      //busco todos, esto es para los que entraron por el front
+            let productos = await ProductoModel.find({}).lean()      //busco todos, esto es para los que entraron por el front 
             let savedProduct = productos[productos.length-1]  //guardo el ultimo
 
-            return savedProduct
+            return DB_Mongo.genIdKey(savedProduct)
         }
         catch(error){
             console.log(`Eror en el createProduct: ${error.message}`)
@@ -59,10 +43,10 @@ class ProductoModelMongoDB {
     }
     /* R => Read All */
     readProducts = async () => {
-        if(!ProductoModelMongoDB.connectionOk) return []
+        if(!DB_Mongo.connectionOk) return []
         try{
-            let productos = await ProductoModel.find({}) //busca todos
-            return productos
+            let productos = await ProductoModel.find({}).lean() //busca todos
+            return DB_Mongo.genIdKey(productos)
         }
         catch(error){
             console.log(`Eror en el readProducts: ${error.message}`)
@@ -71,11 +55,11 @@ class ProductoModelMongoDB {
     }
     /* R => Read One*/
     readProduct = async id => {
-        if(!ProductoModelMongoDB.connectionOk) return {}
+        if(!DB_Mongo.connectionOk) return {}
 
         try{
-            let producto = await ProductoModel.findOne({_id:id}) //busca 1 por id
-            return producto
+            let producto = await ProductoModel.findOne({_id:id}).lean() //busca 1 por id
+            return DB_Mongo.genIdKey(producto)
         }
         catch(error){
             console.log(`Error en el readProduct: ${error.message}`)
@@ -85,13 +69,13 @@ class ProductoModelMongoDB {
     }
     /* U => Update */
     updateProduct = async (id,producto) => {
-        if(!ProductoModelMongoDB.connectionOk) return {}
+        if(!DB_Mongo.connectionOk) return {}
         
         try{
             await ProductoModel.updateOne({_id:id}, {$set: producto}) //actualiza 1 por id, mediante el set le pasamos el producto
 
-            let updatedProduct = await ProductoModel.findOne({_id:id})  //busco el producto por el id que entro del front, y lo retorno
-            return updatedProduct
+            let updatedProduct = await ProductoModel.findOne({_id:id}).lean()  //busco el producto por el id que entro del front, y lo retorno
+            return DB_Mongo.genIdKey(updatedProduct)
         }
         catch(error){
             console.log(`Error en el updateProduct: ${error.message}`)
@@ -101,10 +85,13 @@ class ProductoModelMongoDB {
     }
     /* D => Delete */
     deleteProduct = async id => {
-        if(!ProductoModelMongoDB.connectionOk) return {}
+        if(!DB_Mongo.connectionOk) return {}
         try{
+            let deletedProduct = await ProductoModel.findOne({_id:id}).lean() 
             await ProductoModel.deleteOne({_id:id})
-            return 'ok deleteOne'
+            
+            return DB_Mongo.genIdKey(deletedProduct)
+            
         }
         catch(error){
             console.log(`Error en el deleteProduct: ${error.message}`)

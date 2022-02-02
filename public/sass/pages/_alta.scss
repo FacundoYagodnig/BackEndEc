@@ -13,6 +13,7 @@ h1 {
     margin: 10px auto;
     padding-bottom: 10px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
     border: 2px solid black;
@@ -71,13 +72,20 @@ h1 {
 
     #submit-btn {
       margin: 20px auto;
-      width: min(40%, 200px);
+      width: 200px;
       height: 4vh;
       font-weight: var(--bold-font);
     }
 
-    
-
+    .button, button {
+      display: inline-block;
+      padding: 10px;
+      background: #ccc;
+      cursor: pointer;
+      border: 5px solid  #ccc;
+      border-bottom: 20px;
+      margin: 15px 0;
+    }
   }
 
   table,th,td {
@@ -91,9 +99,33 @@ h1 {
 
   #product-list {
       width: 100%;
+      overflow-x: visible;
   }
 
   th,td {
       padding: 5px;
+  }
+
+  #drop-area {
+    border: 2px dashed #ccc; 
+    border-radius: 20px;
+    width: 300px;
+    margin: 25px 0;
+    padding: 20px;
+  }
+
+  #foto {
+    display: none;
+  }
+
+  #gallery img {
+    width: 100px;
+    margin-top: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  #drop-area.highlight{
+    border-color: red;
   }
 }
