@@ -20,9 +20,9 @@ const saveCarritos = async (req,res) => {
     let preference = {
 		items: items,               //los inyecto de manera individual en las preferences
 		back_urls: {
-			"success": "http:/api/carrito/feedback",  //y en la ruta correspondiente
-			"failure": "http:/api/carrito/feedback",
-			"pending": "http:/api/carrito/feedback"
+			"success": "/api/carrito/feedback",  //y en la ruta correspondiente
+			"failure": "/api/carrito/feedback",
+			"pending": "/api/carrito/feedback"
 		},
 		auto_return: "approved",
 	};
