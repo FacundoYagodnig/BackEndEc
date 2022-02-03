@@ -13,7 +13,7 @@
   <div class="big-container">
     <header class="main-header">
       <input type="checkbox" id="menu" />
-      <!-- nav-bar -->
+      <!-- -------------- NAV-BAR --------------- -->
       <nav class="nav-bar">
         <ul class="nav-bar__nav-list">
           <li class="nav-bar__nav-item">
@@ -30,8 +30,8 @@
           </li>
         </ul>
       </nav>
-      <!-- nav-bar -->
-      <!-- search-bar -->
+      <!-- -------------- NAV-BAR --------------- -->
+      <!-- ------------- SEARCH-BAR ------------- -->
       <div class="search-bar">
         <div class="search-bar__container">
           <div class="search-bar__logo-container">
@@ -46,6 +46,7 @@
           <input class="search-bar__form-submit" type="submit" value="Buscar" />
         
         </form>
+        
         <div class="search-bar__carrito-container">
           <span class="badge-cart" id="badge-cart">0</span>
           <a class="search-bar__carrito-link">
@@ -60,7 +61,7 @@
           </label>
         </div>
       </div>
-      <!-- search-bar -->
+      <!-- ------------- SEARCH-BAR -------------- -->
     </header>
 
     <!-- --------- VISTA DEL CARRITO ----------- -->
@@ -75,9 +76,14 @@
         </div>
     </div>
     <!-- --------- VISTA DEL CARRITO ----------- -->
-   
+
+    <!-- --------- VISTA DEL PAGO -------------- -->
+    <div class="section-pago"></div>
+    <!-- --------- VISTA DEL PAGO -------------- -->
+
     <main> </main>
-     <!-- --------- FOOTER ----------- -->
+
+     <!-- -------------- FOOTER ---------------- -->
     <footer class="footer">
       <div class="container-footer">
         <div class="sign-up-box">
@@ -140,6 +146,9 @@
     </footer>
     <!-- --------- FOOTER ----------- -->   
   </div>
+
+ <!-- // SDK MercadoPago.js V2 -->
+ <script src="https://sdk.mercadopago.com/js/v2"></script>
   
  <!-- script librerias -->
  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -166,6 +175,8 @@
   <script src="js/menu/nosotros.js"></script>
   <script src="js/menu/contacto.js"></script>
   <script src="js/menu/carrito.js"></script>
+
+  <script src="js/menu/pagos.js"></script>
 
   <!-- main script -->
   <script src="js/main.js"></script>

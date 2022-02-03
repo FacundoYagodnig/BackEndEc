@@ -2,15 +2,13 @@
             HEADER
 *********************************/
 .main-header {
+  height: 100%;
   display: flex;
-  height: max(39px, 100%);
   background-color: #fff;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
-  top: 145%;
- 
 }
 
 #menu {
@@ -35,7 +33,6 @@
   display: none;
   width: 100%;
   background-color: #fefefe;
-
 
   .nav-bar__nav-list {
     height: 100%;
@@ -227,7 +224,6 @@
   .main-header {
     .nav-bar {
       display: none;
-      
     }
     .search-bar {
       .search-bar__form-container  {
@@ -239,12 +235,13 @@
 
 @media (min-width: 1024px) {
   .main-header {
-    height: max(75px, 100%);
     .menu-toggle {
       display: none;
     }
     .nav-bar {
       display: block;
+      margin-top: 10px;
+      height: 50px;
 
       &__nav-link {
         margin: 0 auto;

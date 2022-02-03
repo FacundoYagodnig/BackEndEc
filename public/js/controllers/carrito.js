@@ -45,6 +45,7 @@ class CarritoController extends CarritoModel {
         console.log(this.carrito)
       
        localStorage.setItem('carrito', JSON.stringify(this.carrito))
+       console.log(this.carrito.total)
     }
 
 
@@ -53,6 +54,7 @@ class CarritoController extends CarritoModel {
             (acc, { cantidad, price }) => acc + cantidad * price,
             0
         );
+        
 
         if(this.carrito.length > 0) {
         let total = document.querySelector('.total')
@@ -63,6 +65,8 @@ class CarritoController extends CarritoModel {
         this.carrito.map(producto => { 
             producto.total = nTotal
         });
+
+        console.log(this.carrito.total)
     }
 
     //actualiza el numero de la cantidad que hay en el carrito en el badge
@@ -134,8 +138,10 @@ class CarritoController extends CarritoModel {
 
     async enviarCarrito() {
         this.sectionCarrito__body.innerHTML = '<h2>Enviando productos...</h2>'
-        await carritoService.saveCarritoService(this.carrito)
+        const preference = await carritoService.saveCarritoService(this.carrito)
         this.vaciarCarrito()
+        console.log(preference)
+        await renderPago(preference)
         this.sectionCarrito__body.innerHTML = '<h2>Productos Comprados con exito!</h2>'
     }
 }
