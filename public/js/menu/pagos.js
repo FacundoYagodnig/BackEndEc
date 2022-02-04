@@ -1,6 +1,6 @@
 
 // Add the SDK credentials
-const mercadopago = new MercadoPago("PUBLIC KEY", {
+const mercadopago = new MercadoPago("TEST-55206316-1e20-43c5-8ebf-2973c361877f", {
   locale: "es-AR",
 });
 
@@ -16,24 +16,28 @@ async function renderPago(preference) {
   const refItems = document.querySelector('.items')
   const refITotal = document.querySelector('#summary-total')
   
-  let index = items.findIndex(item => item)
+  let total = 0
+  items.forEach((item) => {
+    const title = item.title
+    const price = item.unit_price
+    const quantity = item.quantity
 
-  const title = items[index].title
-  const price = items[index].unit_price
-  const quantity = items[index].quantity 
+    let subtotal = price * quantity
 
-  let subtotal = price * quantity
+    const nTotal =  items.reduce(                  
+      (acc, { quantity, unit_price }) => acc + quantity * unit_price,
+      0
+    );
 
-  const nTotal =  items.reduce(                  
-    (acc, { quantity, unit_price }) => acc + quantity * unit_price,
-    0
-);
-  
-  refItems.innerHTML += ` 
-    <span class="price" id="summary-price"> Precio: ${subtotal}</span>
-    <p class="item-name"> Artículo: ${title} <span class="summary-quantity"> Cantidad: ${quantity}</span></p>
+    total = nTotal
+
+    refItems.innerHTML += ` 
+    <span class="price" id="summary-price"> $${subtotal}</span>
+    <p class="item-name">${title} x<span class="summary-quantity">${quantity}</span></p>
  `
-  refITotal.innerHTML = nTotal
+  })
+
+  refITotal.innerHTML = `$${total}`
 
   // Go back event, para volver de la pagina de pagos
   document.getElementById("go-back").addEventListener("click", function () {
