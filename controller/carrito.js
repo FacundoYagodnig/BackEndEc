@@ -20,9 +20,9 @@ const saveCarritos = async (req,res) => {
     let preference = {
 		items: items,               //los inyecto de manera individual en las preferences
 		back_urls: {
-			"success": "https://my-first-backend-node-js.glitch.me/api/carrito/feedback",  //y en la ruta correspondiente
-			"failure": "https://my-first-backend-node-js.glitch.me/api/carrito/feedback",
-			"pending": "https://my-first-backend-node-js.glitch.me/api/carrito/feedback"
+			"success": "https:/localhost::8080/api/carrito/feedback",  //y en la ruta correspondiente
+			"failure": "https:/localhost::8080/api/carrito/feedback",
+			"pending": "https:/localhost::8080/api/carrito/feedback"
 		},
 		auto_return: "approved",
 	};
