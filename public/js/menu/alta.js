@@ -1,11 +1,8 @@
   class AltaForm {
     form = null
     inputs = null
-    selects = null   //porque pasamos todos estos en null al comienzo ??
-    option = null
-    option2 = null
     btnSubmit = null
-    validationArray = [false, false, false, false];
+    validationArray = [false, false, false, false, false, false];
 
     /* --------------------------drag and drop------------------------------*/  
     imagenSubida = '' 
@@ -17,13 +14,14 @@
       /^(([A-Z][a-z]{2,20}( [\d]{0,3}){0,3})){0,3}$/,     //nombre
       /^[\d]+$/,                                          //precio
       /^[\d]+$/,                                          //stock
+      /^.+$/,                                             //brand
+      /^.+$/,                                             //category
       /^.+$/                                              //detalles
     ];
 
     constructor(renderTablaAlta, saveProduct ){
       this.form = document.querySelector('.alta-container__form');
       this.inputs = document.querySelectorAll('.alta-container form input.data-validation');
-      this.selects = document.querySelectorAll('.alta-container select')
       this.btnSubmit = document.querySelector('#submit-btn');
 
       this.btnSubmit.disabled = true;
@@ -39,16 +37,12 @@
       });
   
       this.form.addEventListener("submit", e => { //porque poner este y el anterior recorrido para renderizar la tabla dentro del constructor?
-
         e.preventDefault();
-        
-        this.option = this.selects[0].options[this.selects[0].selectedIndex].text //porque solo me funciona aca y no como los demas ??
-        this.option2 = this.selects[1].options[this.selects[1].selectedIndex].text
-        let product =  this.leerProductoIngresado(this.option,this.option2)
+       
+        let product =  this.leerProductoIngresado()
         this.limpiarFormulario()
 
         if(saveProduct) saveProduct(product)
-    
       });
 
       /* --------------------------drag and drop------------------------------*/  
@@ -82,9 +76,7 @@
         var files = dt.files
 
         this.handleFiles(files)
-
       })
-
 
       /* --------------------------drag and drop------------------------------*/ 
     }
@@ -98,11 +90,13 @@
   invalidFields() {
     //si cualquiera de las validaciones es false , son todas false , si son todas true queda en true y luego retorna el contrario para que lo tome el boton.disabled y se habilite o no
     let valid =
-     this.validationArray[0] &&
-     this.validationArray[1] &&
-     this.validationArray[2] &&
-     this.validationArray[3] 
-    
+    this.validationArray[0] &&
+    this.validationArray[1] &&
+    this.validationArray[2] &&
+    this.validationArray[3] &&
+    this.validationArray[4] &&
+    this.validationArray[5]  
+
     console.log(`Are all the fields valid? : ${valid}`);
     return !valid;
   };
@@ -123,18 +117,18 @@
     return value;
   };
 
-   leerProductoIngresado(option,option2){
+   leerProductoIngresado(){
     return  {
-        name: this.inputs[0].value,
-        price: this.inputs[1].value,
-        stock: this.inputs[2].value,
-        brand: option,
-        category: option2,
-        details: this.inputs[3].value,
-        photo: this.imagenSubida? `/uploads/${this.imagenSubida}` : '', //si existe, agregame la ruta a la imagen
-        send: this.inputs[4].checked,
-        cantidad : 0,
-        total:0,
+      name: this.inputs[0].value,
+      price: this.inputs[1].value,
+      stock: this.inputs[2].value,
+      brand: this.inputs[3].value,
+      category: this.inputs[4].value,
+      details: this.inputs[5].value,
+      photo: this.imagenSubida? `/uploads/${this.imagenSubida}` : '', //si existe, agregame la ruta a la imagen
+      send: this.inputs[6].checked,
+      cantidad : 0,
+      total: 0
     };
 
     
@@ -148,7 +142,7 @@
       else if(input.type == 'checkbox') input.checked = false
   })
     this.btnSubmit.disabled = true;
-    this.validationArray = [false, false, false, false];
+    this.validationArray = [false, false, false, false, false, false];
 
     let img = document.querySelector('#gallery img')
     img.src = ''

@@ -40,7 +40,7 @@ const updateProducts = async (id,producto) => {
     return productoActualizado
     }
     else {
-        throw new Error('Error en updateProducts', errorValidation.details[0].message)
+       console.error('Error en updateProducts', errorValidation.details[0].message)
     }
 }
 
