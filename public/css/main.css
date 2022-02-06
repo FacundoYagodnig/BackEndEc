@@ -44,27 +44,11 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.u-text-align-center {
-  text-align: center;
-}
-
-.u-text-align-justify {
-  text-align: justify;
-}
-
-.u-text-align-left {
-  text-align: left;
-}
-
-.u-text-align-right {
-  text-align: right;
-}
-
 .card {
   outline: none;
   display: flex;
   flex-wrap: wrap;
-  width: 200px;
+  width: 231px;
   height: 320px;
   flex-direction: column;
   overflow: hidden;
@@ -142,6 +126,7 @@ body {
 .card:hover .card__content {
   padding-top: 1em;
 }
+
 /*********************************
             CAROUSEL
 *********************************/
@@ -155,11 +140,10 @@ body {
   position: relative;
   height: 100%;
 }
-.hero .carousel .carousel-img__img {
+.hero .carousel .carousel-img .carousel-img__img {
   width: 100%;
-  height: 100%;
 }
-.hero .carousel .carousel-img__prev {
+.hero .carousel .carousel-img__btn.prev {
   display: block;
   position: absolute;
   left: 5%;
@@ -167,10 +151,10 @@ body {
   color: white;
   cursor: pointer;
 }
-.hero .carousel .carousel-img__next {
+.hero .carousel .carousel-img__btn.next {
   display: block;
   position: absolute;
-  right: 5%;
+  left: 93.5%;
   top: calc(50% - 40px);
   color: white;
   cursor: pointer;
@@ -512,13 +496,13 @@ body {
             HEADER
 *********************************/
 .main-header {
-  height: 100%;
   display: flex;
   background-color: #fff;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
+  height: 45px;
 }
 
 #menu {
@@ -542,6 +526,7 @@ body {
 .nav-bar {
   display: none;
   width: 100%;
+  height: 100%;
   background-color: #fefefe;
 }
 .nav-bar .nav-bar__nav-list {
@@ -554,7 +539,6 @@ body {
 }
 .nav-bar .nav-bar__nav-item {
   text-align: center;
-  margin: 5px;
 }
 .nav-bar .nav-bar__nav-link {
   display: block;
@@ -566,7 +550,7 @@ body {
   position: relative;
 }
 .nav-bar .nav-bar__nav-link:hover {
-  color: #eed4d4;
+  color: #f19a67;
 }
 
 /*********************************
@@ -575,6 +559,7 @@ body {
 .search-bar {
   display: flex;
   width: 100%;
+  height: 45px;
   order: 1;
   justify-content: space-around;
   background-color: #2e2e2e;
@@ -604,8 +589,8 @@ body {
 }
 .search-bar .search-bar__form-container input {
   display: inline-block;
-  height: 30px;
-  font-size: calc(0.5rem + .5vw);
+  height: 25px;
+  font-size: calc(0.5rem + 0.5vw);
   transition: 0.5s;
 }
 .search-bar .search-bar__form-label {
@@ -643,7 +628,7 @@ body {
 }
 .search-bar .search-bar__carrito-container {
   display: flex;
-  height: 50px;
+  height: 45px;
   justify-content: center;
   align-items: center;
   background-color: #f8f4f4;
@@ -676,7 +661,7 @@ body {
 *********************************/
 .menu-toggle {
   display: block;
-  height: 50px;
+  height: 45px;
   width: 45px;
   background-color: red;
   border: 2px solid black;
@@ -712,7 +697,7 @@ body {
   bottom: 0.8em;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .main-header .nav-bar {
     display: none;
   }
@@ -720,14 +705,12 @@ body {
     display: flex;
   }
 }
-@media (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .main-header .menu-toggle {
     display: none;
   }
   .main-header .nav-bar {
     display: block;
-    margin-top: 10px;
-    height: 50px;
   }
   .main-header .nav-bar__nav-link {
     margin: 0 auto;
@@ -749,7 +732,7 @@ body {
   }
 }
 .big-container {
-  margin-top: 49px;
+  margin-top: 45px;
   overflow: hidden;
   position: relative;
   display: grid;
@@ -769,9 +752,9 @@ body {
   grid-area: hero;
 }
 
-@media screen and (min-width: 1279px) {
+@media only screen and (min-width: 1279px) {
   .big-container {
-    margin-top: 59px;
+    margin-top: 51px;
     grid-template-columns: repeat(auto-fit, minmax(44rem, 1fr));
   }
 }
@@ -783,8 +766,10 @@ body {
   flex-direction: column;
   background-color: #eeeeee;
 }
-.footer p, .footer input, .footer label {
-  font-size: calc(0.5rem + .5vw);
+.footer p,
+.footer input,
+.footer label {
+  font-size: calc(0.5rem + 0.5vw);
 }
 .footer input {
   height: 30px;
@@ -874,7 +859,7 @@ body {
 }
 .footer .box-information {
   display: none;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .footer .box-information h4 {
@@ -893,8 +878,8 @@ body {
   left: 0px;
   width: 0;
   height: 3px;
-  background-color: #ff5e00;
-  z-index: 9999999;
+  background-color: #f19a67;
+  z-index: 7;
   transition: 0.3s;
 }
 .footer .box-information .list-info .border-animation:hover {
@@ -922,7 +907,7 @@ body {
   padding: 5px;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .footer {
     height: 100%;
     max-height: 600px;
@@ -1008,7 +993,7 @@ body {
     padding: 0;
   }
 }
-@media (min-width: 1440px) {
+@media only screen and (min-width: 1440px) {
   .footer .footer-form {
     width: 48.66%;
   }
@@ -1046,7 +1031,7 @@ body {
   flex-wrap: wrap;
   gap: 1em;
 }
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .section-cards {
     width: 80%;
     margin: 20px auto;
@@ -1059,7 +1044,7 @@ body {
     padding: 10px;
   }
 }
-@media (min-width: 768px) and (min-width: 1024px) {
+@media only screen and (min-width: 768px) and (min-width: 1024px) {
   .section-cards {
     width: 80%;
     margin: 0 auto;
@@ -1072,11 +1057,10 @@ body {
 
 h1 {
   text-align: center;
-  margin-top: 30px;
 }
 
 .alta-container {
-  width: 80%;
+  width: min(100%, 40rem);
   margin: 0 auto;
 }
 .alta-container .alta-container__form {
@@ -1085,11 +1069,13 @@ h1 {
   margin: 10px auto;
   padding-bottom: 10px;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  border: 2px solid black;
-  height: 100%;
+  border-radius: 15px;
+  border: 1px solid black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   text-align: center;
 }
 .alta-container .alta-container__form .input-container {
@@ -1099,11 +1085,11 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: 10px auto;
+  margin: 10px 0;
 }
 .alta-container .alta-container__form .input-container .validator-cartel {
   display: none;
-  width: 500px;
+  width: 100%;
   height: 30px;
   background-color: yellow;
   border: 2px solid red;
@@ -1112,7 +1098,7 @@ h1 {
   width: 100%;
   display: block;
   margin: 5px auto;
-  font-weight: var(--bold-font);
+  font-weight: bold;
 }
 .alta-container .alta-container__form .input-container input {
   width: min(80%, 500px);
@@ -1139,35 +1125,47 @@ h1 {
 .alta-container .alta-container__form .free-shipping {
   width: 100%;
   height: 31px;
-  font-weight: var(--bold-font);
+  font-weight: bold;
+}
+.alta-container .alta-container__form .alta-submit {
+  width: 100%;
 }
 .alta-container .alta-container__form #submit-btn {
-  margin: 20px auto;
-  width: 200px;
+  width: min(80%, 50vw);
   height: 4vh;
-  font-weight: var(--bold-font);
+  font-weight: bold;
 }
-.alta-container .alta-container__form .button, .alta-container .alta-container__form button {
+.alta-container .alta-container__form .button,
+.alta-container .alta-container__form button {
   display: inline-block;
-  padding: 10px;
   background: #ccc;
   cursor: pointer;
   border: 5px solid #ccc;
   border-bottom: 20px;
   margin: 15px 0;
 }
-.alta-container table, .alta-container th, .alta-container td {
+.alta-container #product-list {
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.alta-container table,
+.alta-container th,
+.alta-container td {
   border: 1px solid black;
   border-collapse: collapse;
+  text-align: center;
+  box-shadow: rgba(50, 50, 93, 0) 0px 50px 60px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .alta-container table {
-  width: 90%;
+  width: max(37vw, 120%);
+  flex-direction: column;
+  margin: 10px auto;
 }
-.alta-container #product-list {
-  width: 100%;
-  overflow-x: visible;
-}
-.alta-container th, .alta-container td {
+.alta-container th,
+.alta-container td {
   padding: 5px;
 }
 .alta-container #drop-area {

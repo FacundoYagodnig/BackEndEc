@@ -1,7 +1,7 @@
 /*********************************
             CAROUSEL
 *********************************/
-.hero{
+.hero {
   .carousel {
     width: 100%;
     height: 100%;
@@ -12,12 +12,11 @@
       position: relative;
       height: 100%;
 
-      &__img {
+      .carousel-img__img {
         width: 100%;
-        height: 100%;
       }
 
-      &__prev {
+      &__btn.prev {
         display: block;
         position: absolute;
         left: 5%;
@@ -25,10 +24,10 @@
         color: white;
         cursor: pointer;
       }
-      &__next {
+      &__btn.next {
         display: block;
         position: absolute;
-        right: 5%;
+        left: 93.5%;
         top: calc(50% - 40px);
         color: white;
         cursor: pointer;
@@ -36,7 +35,3 @@
     }
   }
 }
-
-
-
-

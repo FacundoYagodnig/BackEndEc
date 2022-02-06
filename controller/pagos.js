@@ -3,7 +3,7 @@ import mercadopago from 'mercadopago'
 
 // Add Your credentials
 mercadopago.configure({
-  access_token: 'TEST-2041714435385706-020218-c160b6188b39dfef25c0e8685798a446-436714700'
+  access_token: 'PRIVATE KEY'
 });
 
 

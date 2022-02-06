@@ -1,7 +1,3 @@
-// import models from "../models/productosMem.js"
-//import models from "../models/productosFile.js"
-//simport models from "../models/productosMongoDB.js"
-
 import config from '../config.js'
 
 import ProductoModel from "../models/productos-factory.js"
