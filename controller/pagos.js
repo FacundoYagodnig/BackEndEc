@@ -6,6 +6,7 @@ mercadopago.configure({
   access_token: 'PRIVATE KEY'
 });
 
+
 console.log('------ configuracion de SDK de mercado pago ------')
 
 const feedBack = (req, res) => {

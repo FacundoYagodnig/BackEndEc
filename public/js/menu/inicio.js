@@ -1,5 +1,8 @@
 const renderCards = async (cards) => {
   let plantillaHbs = await fetch("plantillas/cards.hbs").then((r) => r.text());
+  Handlebars.registerHelper('toLocaleString', function(number) {
+    return number.toLocaleString('es-AR')
+  })
   var template = Handlebars.compile(plantillaHbs);
   let html = template({ cards });
   document.getElementById("cards-container").innerHTML = html;
@@ -21,8 +24,7 @@ function carrousel() {
   let imgs = document.querySelector(".carousel-img__img");
 
   btnNext.addEventListener("click", () => {
-
-  contador++    
+    contador++;
     if (contador >= arrayImgs.length) {
       contador = 0;
       imgs.src = arrayImgs[contador];
@@ -33,15 +35,14 @@ function carrousel() {
   });
 
   btnPrev.addEventListener("click", () => {
-      contador--;
+    contador--;
+    imgs.src = arrayImgs[contador];
+    if (contador < 0) {
+      contador = arrayImgs.length - 1;
       imgs.src = arrayImgs[contador];
-      if (contador < 0) {
-        contador = arrayImgs.length - 1;
-        imgs.src = arrayImgs[contador];
-      }
-
-      console.log(contador);
-    });
+    }
+    console.log(contador);
+  });
 }
 
 async function initInicio() {

@@ -29,10 +29,10 @@ async function renderPago(preference) {
       0
     );
 
-    total = nTotal
+    total = nTotal.toLocaleString('es-AR')
 
     refItems.innerHTML += ` 
-    <span class="price" id="summary-price"> $${subtotal}</span>
+    <span class="price" id="summary-price"> $${subtotal.toLocaleString('es-AR')}</span>
     <p class="item-name">${title} x<span class="summary-quantity">${quantity}</span></p>
  `
   })
