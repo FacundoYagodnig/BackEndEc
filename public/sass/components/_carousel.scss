@@ -1,42 +1,112 @@
 /*********************************
             CAROUSEL
 *********************************/
-.hero{
-  .carousel {
+.hero {
+  height: 100vh;
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  .carrousel {
     width: 100%;
-    height: 100%;
-    order: 1;
+    padding: 2em;
+    position: relative;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .carousel-img {
+  .slider {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.836);
+    padding: 20px;
+    clip-path: circle(0% at 0 50%); //tapa todas las no active
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+
+  .slider img {
+    max-width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .carrousel .slider.active {
+    clip-path: circle(150% at 0 50%); //solo se muestra el active
+    transition: 2s;
+  }
+
+  .navigation {
+    height: 50px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .prev-btn,
+  .next-btn {
+    z-index: 9999;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+
+  .dots-container {
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 50%;
+    position: absolute;
+    bottom: calc(50% + -18vw);
+  }
+
+  .dots-container .dot-icon {
+    z-index: 9999;
+    background: rgba(221, 205, 205, 0.829);
+    width: 100%;
+    height: 10px;
+    margin: 0 6px;
+    cursor: pointer;
+  }
+
+  .dots-container .dot-icon.active {
+    background: #4285f4;
+  }
+
+  @media screen and (min-width: 2000px) {
+    .carrousel {
+      height: calc(55em + 55px);
       width: 100%;
-      position: relative;
+    }
+    .slider {
       height: 100%;
+      width: 100%;
+      bottom: 0;
+      top: 0;
 
-      &__img {
-        width: 100%;
+      img {
         height: 100%;
+        width: 100%;
       }
+    }
 
-      &__prev {
-        display: block;
-        position: absolute;
-        left: 5%;
-        top: calc(50% - 40px);
-        color: white;
-        cursor: pointer;
-      }
-      &__next {
-        display: block;
-        position: absolute;
-        right: 5%;
-        top: calc(50% - 40px);
-        color: white;
-        cursor: pointer;
-      }
+    .prev-btn,
+    .next-btn {
+      font-size: 2em;
+    }
+  }
+
+  @media screen and (min-width: 2560px) {
+    .carrousel {
+      height: calc(55em + 15em);
+      width: 100%;
     }
   }
 }
-
-
-
-
