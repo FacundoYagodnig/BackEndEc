@@ -2,37 +2,36 @@
             CAROUSEL
 *********************************/
 .hero {
-  height: 100vh;
-  max-width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  width: 100%;
+  height: min(47vw, 1200px);
 
   .carrousel {
     width: 100%;
-    padding: 2em;
+    height: 100%;
     position: relative;
-    background: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .slider {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    background: rgba(255, 255, 255, 0.836);
-    padding: 20px;
+    // background-color: rgba(221, 205, 205, 0.829);
+    // border-radius: 15px;
     clip-path: circle(0% at 0 50%); //tapa todas las no active
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    // box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    //  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   }
 
   .slider img {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
-    object-fit: cover;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
@@ -64,12 +63,12 @@
     width: 100%;
     max-width: 50%;
     position: absolute;
-    bottom: calc(50% + -18vw);
+    bottom: calc(50% + -20vw);
   }
 
   .dots-container .dot-icon {
     z-index: 9999;
-    background: rgba(221, 205, 205, 0.829);
+    background: rgba(248, 236, 236, 0.563);
     width: 100%;
     height: 10px;
     margin: 0 6px;
@@ -78,35 +77,5 @@
 
   .dots-container .dot-icon.active {
     background: #4285f4;
-  }
-
-  @media screen and (min-width: 2000px) {
-    .carrousel {
-      height: calc(55em + 55px);
-      width: 100%;
-    }
-    .slider {
-      height: 100%;
-      width: 100%;
-      bottom: 0;
-      top: 0;
-
-      img {
-        height: 100%;
-        width: 100%;
-      }
-    }
-
-    .prev-btn,
-    .next-btn {
-      font-size: 2em;
-    }
-  }
-
-  @media screen and (min-width: 2560px) {
-    .carrousel {
-      height: calc(55em + 15em);
-      width: 100%;
-    }
   }
 }

@@ -59,14 +59,14 @@ class CarritoController extends CarritoModel {
         if(this.carrito.length > 0) {
         let total = document.querySelector('.total')
         this.carrito.total = nTotal
-        total.innerHTML = nTotal
+        total.innerHTML = nTotal.toLocaleString('es-AR')
         };
 
-        this.carrito.map(producto => { 
-            producto.total = nTotal
-        });
+        // this.carrito.map(producto => { 
+        //     producto.total = nTotal
+        // });
 
-        console.log(this.carrito.total)
+        // console.log(this.carrito.total)
     }
 
     //actualiza el numero de la cantidad que hay en el carrito en el badge

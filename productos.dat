@@ -1,12 +1,12 @@
 [
 	{
-		"name": "Asd",
-		"price": "33",
-		"stock": "5",
-		"brand": "Lenovo",
-		"category": "Consola",
-		"details": "sadasda",
-		"photo": "/uploads/1643752272653-auriculares-sony.jpg",
+		"name": "Auriculares Sony",
+		"price": "20000",
+		"stock": "33",
+		"brand": "Sony",
+		"category": "Auriculares",
+		"details": "Auriculares bluetooth",
+		"photo": "/uploads/1644199818848-auriculares-sony.jpg",
 		"send": true,
 		"cantidad": 0,
 		"total": 0,
@@ -37,5 +37,18 @@
 		"cantidad": 0,
 		"total": 0,
 		"id": "11111"
+	},
+	{
+		"name": "Notebook Msi Graider",
+		"price": "250000",
+		"stock": "22",
+		"brand": "MSI",
+		"category": "Notebooks",
+		"details": "Notebook Msi GS76Raider",
+		"photo": "/uploads/1645503082914-notebook-msi.jpg",
+		"send": true,
+		"cantidad": 0,
+		"total": 0,
+		"id": "111111"
 	}
 ]

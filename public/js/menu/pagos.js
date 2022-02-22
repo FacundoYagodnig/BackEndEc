@@ -1,6 +1,6 @@
 
 // Add the SDK credentials
-const mercadopago = new MercadoPago("CLAVE PUBLICA MERCADO PAGO", {
+const mercadopago = new MercadoPago('TEST-55206316-1e20-43c5-8ebf-2973c361877f', {
   locale: "es-AR",
 });
 
@@ -11,6 +11,33 @@ async function renderPago(preference) {
   document.querySelector(".section-pago").innerHTML = html;
 
   createCheckoutButton(preference.id)
+
+  const items = preference.items
+  const refItems = document.querySelector('.items')
+  const refITotal = document.querySelector('#summary-total')
+  
+  let total = 0
+  items.forEach((item) => {
+    const title = item.title
+    const price = item.unit_price
+    const quantity = item.quantity
+
+    let subtotal = price * quantity
+
+    const nTotal =  items.reduce(                  
+      (acc, { quantity, unit_price }) => acc + quantity * unit_price,
+      0
+    );
+
+    total = nTotal.toLocaleString('es-AR')
+
+    refItems.innerHTML += ` 
+    <span class="price" id="summary-price"> $${subtotal.toLocaleString('es-AR')}</span>
+    <p class="item-name">${title} x<span class="summary-quantity">${quantity}</span></p>
+ `
+  })
+
+  refITotal.innerHTML = `$${total}`
 
   // Go back event, para volver de la pagina de pagos
   document.getElementById("go-back").addEventListener("click", function () {

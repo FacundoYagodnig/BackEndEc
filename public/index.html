@@ -6,13 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inicio</title>
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://kit.fontawesome.com/cc253917bf.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="big-container">
+    
     <header class="main-header">
-      <input type="checkbox" id="menu" />
+      <!-- <input type="checkbox" id="menu" /> -->
       <!-- -------------- NAV-BAR --------------- -->
       <nav class="nav-bar">
         <ul class="nav-bar__nav-list">
@@ -31,38 +33,36 @@
         </ul>
       </nav>
       <!-- -------------- NAV-BAR --------------- -->
-      <!-- ------------- SEARCH-BAR ------------- -->
-      <div class="search-bar">
-        <div class="search-bar__container">
-          <div class="search-bar__logo-container">
-            <span>CONNECTICUS</span>
-          </div>
-        </div>
+     
+    </header>
 
-        <form class="search-bar__form-container">
-         
-          <input class="search-bar__form-search" id="busqueda" type="search" />
-          <label class="search-bar__form-label" for="busqueda">Buscar productos</label>
-          <input class="search-bar__form-submit" type="submit" value="Buscar" />
-        
-        </form>
-        
-        <div class="search-bar__carrito-container">
-          <span class="badge-cart" id="badge-cart">0</span>
-          <a class="search-bar__carrito-link">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-        </div>
-        <div class="menu-toggle">
-          <label class="menu-toggle__label" for="menu">
-            <span class="menu-toggle__pan-arriba"></span>
-            <span class="menu-toggle__medallon"></span>
-            <span class="menu-toggle__pan-abajo"></span>
-          </label>
+     <!-- ------------- SEARCH-BAR ------------- -->
+     <div class="search-bar">
+      <div class="search-bar__container">
+        <div class="search-bar__logo-container">
+          <span>CONNECTICUS</span>
         </div>
       </div>
-      <!-- ------------- SEARCH-BAR -------------- -->
-    </header>
+
+      <form class="search-bar__form-container">
+       
+        <input class="search-bar__form-search" id="busqueda" type="search" />
+        <label class="search-bar__form-label" for="busqueda">Buscar productos</label>
+        <input class="search-bar__form-submit" type="submit" value="Buscar" />
+      
+      </form>
+      
+      <div class="search-bar__carrito-container">
+        <span class="badge-cart" id="badge-cart">0</span>
+        <a class="search-bar__carrito-link">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </div>
+      <div class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <!-- ------------- SEARCH-BAR -------------- -->
 
     <!-- --------- VISTA DEL CARRITO ----------- -->
     <div class="section-carrito">

@@ -10,7 +10,7 @@ class ProductoModel {
                 return new ProductoModelMem()
             case 'FILE':
                 console.log('**** PERSISTENCIA EN FS (productos) ****')
-                return new ProductoModelFile
+                return new ProductoModelFile()
             case 'MONGODB':
                 console.log('**** PERSISTENCIA EN MONGODB (productos) ****')
                 return new ProductoModelMongoDB()

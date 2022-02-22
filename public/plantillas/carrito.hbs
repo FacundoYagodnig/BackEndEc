@@ -10,7 +10,7 @@
             </div>
             <div class="carrito__info">
                 <h6>{{name}}</h6>
-                <p><strong>Precio: ${{price}}</strong></p>
+                <p><strong>Precio: ${{toLocaleString price}}</strong></p>
                 <p><strong class="cantidad">Cantidad: {{cantidad}}</strong></p>
                 <div class="carrito__container-button"> 
                     <button class="btn-remove" onclick="removeProduct(event,'{{id}}')">-</button>
