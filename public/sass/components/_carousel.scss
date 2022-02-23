@@ -50,13 +50,13 @@
 
   .prev-btn,
   .next-btn {
-    z-index: 9999;
+    z-index: 2;
     cursor: pointer;
     font-size: 1.5em;
   }
 
   .dots-container {
-    z-index: 9999;
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@
   }
 
   .dots-container .dot-icon {
-    z-index: 9999;
+    z-index: 2;
     background: rgba(248, 236, 236, 0.563);
     width: 100%;
     height: 10px;
