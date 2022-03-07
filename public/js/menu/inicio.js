@@ -9,10 +9,11 @@ const renderCards = async (cards) => {
 };
 
 class Carrousel {
-  startPlay;
-   menuToggle = document.querySelector('.menu-toggle')
-   navbar = document.querySelector('.nav-bar')
-   header = document.querySelector('.manu-header')
+  startPlay = null;
+  menuToggle = document.querySelector('.menu-toggle')
+  navbar = document.querySelector('.nav-bar')
+  header = document.querySelector('.manu-header')
+
   constructor() {
     this.carrousel = document.querySelector(".carrousel");
     this.slider = document.querySelectorAll(".slider");
@@ -62,6 +63,20 @@ class Carrousel {
     console.log(this.slideCounter);
   };
 
+ 
+  dotNavigation = (index) => {
+    this.slider.forEach( slide => {
+      slide.classList.remove('active')
+    })
+    this.dots.forEach( dot => {
+      dot.classList.remove('active')
+    })
+
+    this.slider[index].classList.add('active')
+    this.dots[index].classList.add('active')
+  }
+
+
   //start autoplay
 
   autoplay = () => {
@@ -71,6 +86,14 @@ class Carrousel {
    initCarrousel = async () => {
     this.nextBtn.addEventListener("click", this.goNextImage);
     this.prevBtn.addEventListener("click", this.goPreviousImage);
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        this.dotNavigation(index)
+        this.slideCounter = index
+      });
+      
+    })
+
     this.carrousel.addEventListener("mouseover", () => {
       clearInterval(Carrousel.startPlay);
     });
@@ -82,7 +105,6 @@ class Carrousel {
   };
 
 }
-
 
 async function initInicio() {
   console.warn("initInicio()");
